@@ -283,6 +283,7 @@ header{
     padding-top: 4rem;
     
 }
+
 .inner-menu{
     flex: 1 1 280px;
     text-align: center;
@@ -361,6 +362,8 @@ header{
     font-size: 18px;
     padding: 0.5rem 0;
 }
+
+
 .chose-us{
     padding: 4rem 7%;
     background-color: #e5e4e2;
@@ -465,17 +468,17 @@ header{
     font-family: 'dancing script', cursive;
 }
 .main-footer{
-    background-image: url(images/Design\ Elements.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 100% 100%;
+     background-image: url(images/Design\ Elements.png); 
+      background-size: cover;  
+     background-repeat: no-repeat; 
+     background-position: 100% 100%; 
     width: 100%;
-    min-height: 100vh;
+    min-height:100vh;
     display: flex;
     align-items: center;
     gap: 50px;
     flex-wrap: wrap;
-    padding: 2rem 7%;
+     padding: 2rem 7%; 
   }
   .inner-footer{
     flex: 1 1 30rem;
@@ -507,15 +510,6 @@ header{
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
-
-
-
-
-
-
-
-
-
 
 
 
