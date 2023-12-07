@@ -39,11 +39,14 @@ header{
     background-color: white;
     z-index: 1000;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    position: fixed;
-    left: 0;
-    right: 0;
+
+    /* left: 0;
+    right: 0; */
+    /* top: 0; */
+    width: 100%;
 
 }
+
 .logo h1{
     color: var(--green);
     margin-right: 5px;
@@ -473,20 +476,21 @@ header{
      background-repeat: no-repeat; 
      background-position: 100% 100%; 
     width: 100%;
-    min-height:100vh;
+    max-height:100vh;
     display: flex;
     align-items: center;
     gap: 50px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    background-color: white;
      padding: 2rem 7%; 
   }
   .inner-footer{
-    flex: 1 1 30rem;
+    flex: 1 1 10rem;
   }
   .inner-footer a{
     display: block;
     color: #b8860b;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     font-size: 18px;
   }
   .inner-footer a:hover{

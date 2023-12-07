@@ -32,62 +32,7 @@
       text-align: center;  
     }
     
-    input {
-      padding: 10px;
-      width: 100%;
-      font-size: 17px;
-      font-family: Raleway;
-      border: 1px solid #aaaaaa;
-    }
     
-    /* Mark input boxes that gets an error on validation: */
-    input.invalid {
-      background-color: #ffdddd;
-    }
-    
-    /* Hide all steps by default: */
-    .tab {
-      display: none;
-    }
-    
-    button {
-      background-color: #04AA6D;
-      color: #ffffff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 17px;
-      font-family: Raleway;
-      cursor: pointer;
-    }
-    
-    button:hover {
-      opacity: 0.8;
-    }
-    
-    #prevBtn {
-      background-color: #bbbbbb;
-    }
-    
-    /* Make circles that indicate the steps of the form: */
-    .step {
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbbbbb;
-      border: none;  
-      border-radius: 50%;
-      display: inline-block;
-      opacity: 0.5;
-    }
-    
-    .step.active {
-      opacity: 1;
-    }
-    
-    /* Mark the steps that are finished and valid: */
-    .step.finish {
-      background-color: #04AA6D;
-    }
     table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -101,6 +46,21 @@
     }
     </style>
   <body>
+    <header class="header">
+      <div class="logo">
+          <h1><i class="fas fa-utensils"></i>Taste<span>Bites</span></h1>
+      </div>
+      <nav class="navbar">
+          <a href="#home">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="#items">Featured items</a>
+      </nav>
+
+      <div class="icons">
+          <div id="menu-bar" class="fas fa-bars"></div>
+          <div id="cart"><i class="fas fa-cart-plus"></i></div>
+      </div>
+  </header>
       
     <!-- Your table goes here -->
     <!-- Add this code where you want the table -->
