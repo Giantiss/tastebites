@@ -23,7 +23,12 @@
 
         <div class="icons">
             <div id="menu-bar" class="fas fa-bars"></div>
-            <div id="cart"><i class="fas fa-cart-plus"></i></div>
+            <div id="cart" class="cart-icon">
+                <a href="cart.html">
+                    <i id="cart-count" class="fas fa-cart-plus">(0)</i>
+                </a>
+            </div>
+            
         </div>
     </header>
 <!-- menu page start -->
@@ -35,8 +40,8 @@
 
         <div class="main-menu">
             <div class="inner-menu">
-                <div class="menu-main-icon">
-                    <i class="fas fa-cart-plus"></i>
+                <div class="menu-main-icon add-to-cart-btn" onclick="addToCart('Chicken Massala', 300.00)" >
+                    <i class="fas fa-cart-plus" ></i>
                 </div>
                 <div class="menu-content">
                     <div class="image-overlay"></div>
@@ -44,14 +49,14 @@
 
                     <h4>Chicken Massala</h4>
                     <div class="menu-star">
-                        <h1><span>Kes </span>50.00</h1>
+                        <h1><span>Kes </span>300.00</h1>
                     </div>
                 </div>
             </div>
 
             <div class="inner-menu">
-                <div class="menu-main-icon">
-                    <i class="fas fa-cart-plus"></i>
+                <div class="menu-main-icon add-to-cart-btn" onclick="addToCart('Chicken Biryani', 400.00)">
+                    <i class="fas fa-cart-plus" ></i>
                     
                     
                 </div>
@@ -61,13 +66,13 @@
 
                     <h4>Chicken biryani</h4>
                     <div class="menu-star">
-                        <h1><span>Kes </span>50.00</h1>
+                        <h1><span>Kes </span>400.00</h1>
                     </div>
                 </div>
             </div>
 
             <div class="inner-menu">
-                <div class="menu-main-icon">
+                <div class="menu-main-icon" onclick="addToCart('Chips massala', 150.00)">
                     <i class="fas fa-cart-plus"></i>
                    
                     
@@ -78,13 +83,13 @@
 
                     <h4>Chips Massala</h4>
                     <div class="menu-star">
-                        <h1><span>Kes </span>50.00</h1>
+                        <h1><span>Kes </span>150.00</h1>
                     </div>
                 </div>
             </div>
 
             <div class="inner-menu">
-                <div class="menu-main-icon">
+                <div class="menu-main-icon" onclick="addToCart('pizza', 650.00)">
                     <i class="fas fa-cart-plus"></i>
                     
                     
@@ -95,13 +100,13 @@
 
                     <h4>Pizza</h4>
                     <div class="menu-star">
-                        <h1><span>Kes </span>50.00</h1>
+                        <h1><span>Kes </span>650.00</h1>
                     </div>
                 </div>
             </div>
 
             <div class="inner-menu">
-                <div class="menu-main-icon">
+                <div class="menu-main-icon" onclick="addToCart('beef steak', 200.00)">
                     <i class="fas fa-cart-plus"></i>
                     
                     
@@ -112,13 +117,13 @@
 
                     <h4>beef steak</h4>
                     <div class="menu-star">
-                        <h1><span>Kes </span>50.00</h1>
+                        <h1><span>Kes </span>200.00</h1>
                     </div>
                 </div>
             </div>
 
             <div class="inner-menu">
-                <div class="menu-main-icon">
+                <div class="menu-main-icon" onclick="addToCart('omlette', 150.00)">
                     <i class="fas fa-cart-plus"></i>
                     
                     
@@ -129,12 +134,12 @@
 
                     <h4>omlette</h4>
                     <div class="menu-star">
-                        <h1><span>Kes </span>50.00</h1>
+                        <h1><span>Kes </span>150.00</h1>
                     </div>
                 </div>
             </div>
             <div class="inner-menu">
-                <div class="menu-main-icon">
+                <div class="menu-main-icon" onclick="addToCart('Sushi', 500.00)">
                     <i class="fas fa-cart-plus"></i>
                    
                     
@@ -145,12 +150,12 @@
 
                     <h4>sushi</h4>
                     <div class="menu-star">
-                        <h1><span>Kes </span>50.00</h1>
+                        <h1><span>Kes </span>500.00</h1>
                     </div>
                 </div>
             </div>
             <div class="inner-menu">
-                <div class="menu-main-icon">
+                <div class="menu-main-icon" onclick="addToCart('beef rice', 250.00)">
                     <i class="fas fa-cart-plus"></i>
                     
                     
@@ -161,12 +166,12 @@
 
                     <h4>beef rice</h4>
                     <div class="menu-star">
-                        <h1><span>Kes </span>50.00</h1>
+                        <h1><span>Kes </span>250.00</h1>
                     </div>
                 </div>
             </div>
             <div class="inner-menu">
-                <div class="menu-main-icon">
+                <div class="menu-main-icon" onclick="addToCart('Chicken Biryani', 400.00)">
                     <i class="fas fa-cart-plus"></i>
                     
                     
@@ -177,13 +182,13 @@
 
                     <h4>pilau</h4>
                     <div class="menu-star">
-                        <h1><span>Kes </span>50.00</h1>
+                        <h1><span>Kes </span>400.00</h1>
                     </div>
                     
                 </div>
             </div>
             <div class="inner-menu">
-                <div class="menu-main-icon">
+                <div class="menu-main-icon" onclick="addToCart('shawarma', 200.00)">
                     <i class="fas fa-cart-plus"></i>
                    
                     
@@ -194,12 +199,12 @@
 
                     <h4>shawarma</h4>
                     <div class="menu-star">
-                        <h1><span>Kes </span>50.00</h1>
+                        <h1><span>Kes </span>200.00</h1>
                     </div>
                 </div>
             </div>
             <div class="inner-menu">
-                <div class="menu-main-icon">
+                <div class="menu-main-icon" onclick="addToCart('stir fry', 300.00)">
                     <i class="fas fa-cart-plus"></i>
                    
                     
@@ -210,7 +215,7 @@
 
                     <h4>stir fry</h4>
                     <div class="menu-star">
-                        <h1><span>Kes </span>50.00</h1>
+                        <h1><span>Kes </span>300.00</h1>
                     </div>
                 </div>
             </div>
@@ -236,6 +241,7 @@
 
     </div>
 <!-- menu page end -->
+
    
     <footer>
         <div class="main-footer">
@@ -265,5 +271,10 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartIcon();
+        });
+    </script>
 </body>
 </html>

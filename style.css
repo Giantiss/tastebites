@@ -1,68 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Roboto:wght@300;400;500;700;900&family=Square+Peg&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@300;400;500;700;900&display=swap');
-:root{
-    --button:#8CB560;
-    --yellow:#FEBD00;
-    --green : #62ae2f;
-}
-*{
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
-    transition: .2s;
-    text-transform: capitalize;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-
-}
- 
- @media (min-width: 600px) 
- {
-    .cart-icon
-    {
-       display: none;
-    }
- }
-
-html{
-    font-size: 62.5%;
-    
-}
-
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem 7%;
-    background-color: white;
-    z-index: 1000;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-
-    /* left: 0;
-    right: 0; */
-    /* top: 0; */
+body {
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    margin: 80px auto;
     width: 100%;
-
-}
-
-.logo h1{
-    color: var(--green);
+   
+    
+  }
+  .center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .table-container {
+    width: 800px;
+    height: 100%;
+    margin: 20px; 
+  }
+    
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+  }
+  
+  .order-summary {
+    margin-top: 20px;
+  }
+  
+  .order-btn {
+    margin-top: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo h1 {
+    color: #62ae2f;
     margin-right: 5px;
     font-size: 25px;
-}
-.logo i{
+  }
+  
+  .logo i {
     margin-right: 10px;
-}
-.navbar a{
+  }
+  
+  .navbar a {
     font-size: 18px;
     color: black;
     padding: 1rem;
     margin-left: 5px;
     position: relative;
-}
-.navbar a::after{
+  }
+  
+  
+  .navbar a::after {
     content: "";
     background-color: #62ae2f;
     left: 0;
@@ -71,231 +78,341 @@ header{
     height: 3px;
     top: 100%;
     transition: 0.5s;
-}
-.navbar a:hover::after{
+  }
+  
+  .navbar a:hover::after {
     width: 100%;
-}
-
-
-
-.icons{
+  }
+  
+  .icons {
     display: flex;
     align-items: center;
     margin-left: 10px;
-}
-.icons div{
+  }
+  
+  .icons div {
     display: flex;
     align-items: center;
     margin-left: 10px;
-}
-.icons #menu-bar{
-    color: var(--green);
+  }
+  
+  .icons #menu-bar {
+    color: #62ae2f;
     font-size: 2rem;
     display: none;
-}
-.icons #cart{
-    color: var(--green);
+  }
+  
+  .icons #cart {
+    color: #62ae2f;
     font-size: 3rem;
-}
-.icons:hover{
+  }
+  
+  .icons:hover {
     cursor: pointer;
-    
-}
-.add-cart{
+  }
+  
+  
+  
+  @media (min-width: 600px) {
+    .cart-icon {
+      display: none;
+    }
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 7%;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    width: 100%;
+  }
+  
+  .logo h1 {
+    color: #62ae2f;
+    margin-right: 5px;
+    font-size: 25px;
+  }
+  
+  .logo i {
+    margin-right: 10px;
+  }
+  
+  .navbar a {
+    font-size: 18px;
+    color: black;
+    padding: 1rem;
+    margin-left: 5px;
+    position: relative;
+  }
+  
+  .navbar a::after {
+    content: "";
+    background-color: #62ae2f;
+    left: 0;
+    position: absolute;
+    width: 0;
+    height: 3px;
+    top: 100%;
+    transition: 0.5s;
+  }
+  
+  .navbar a:hover::after {
+    width: 100%;
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
+  .icons div {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
+  .icons #menu-bar {
+    color: #62ae2f;
+    font-size: 2rem;
+    display: none;
+  }
+  
+  .icons #cart {
+    color: #62ae2f;
+    font-size: 3rem;
+    margin-right: 3rem;
+  }
+  
+  .icons:hover {
+    cursor: pointer;
+  }
+  
+  
+  .add-cart {
     position: absolute;
     top: 110%;
-    right: 5%;
+    right: 2%;
     width: 25rem;
     background-color: rgb(247, 249, 248);
     padding: 1rem;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-}
-.add-cart.active{
+  }
+  
+  .add-cart.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
-.main-cart{
+  
+  .main-cart {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-}
-.main-cart i{
+  }
+  
+  .main-cart i {
     font-size: 18px;
     position: absolute;
     right: 30px;
     top: 30px;
     color: #62ae2f;
-}
-.main-cart i:hover{
+  }
+  
+  .main-cart i:hover {
     cursor: pointer;
-    color: var(--yellow);
-}
-
-.main-cart img{
+    color: #febd00;
+  }
+  
+  .main-cart img {
     width: 100px;
     padding: 1.5rem 1rem;
-}
-
-.main-cart button{
+  }
+  
+  .main-cart button {
     display: inline-block;
     padding: 1rem 2rem;
     font-size: 1.5rem;
-    background-color: var(--green);
+    background-color: #62ae2f;
     color: white;
     border: none;
     border-radius: 15px;
     transition: 0.5s;
-}
-.main-cart button:hover{
+  }
+  
+  .main-cart button:hover {
     border-radius: 0;
     cursor: pointer;
-}
-.home{
-    
+  }
+  
+  .home {
     padding: 5rem 7%;
-}
-.main-home{
+  }
+  
+  .main-home {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 50px;
-}
-.inner-home{
+  }
+  
+  .inner-home {
     flex: 1 1 45rem;
-}
-.left-content-home h1{
+  }
+  
+  .left-content-home h1 {
     font-size: 36px;
     color: #333;
     padding: 2rem 0;
-}
-.left-content-home p{
+  }
+  
+  .left-content-home p {
     color: #333;
     font-size: 1.5rem;
     padding-bottom: 2rem;
-}
-.left-content-home button{
+  }
+  
+  .left-content-home button {
     padding: 1.5rem 2.5rem;
     font-size: 1.5rem;
     color: #e5e4e2;
     border: 1px solid var(--green);
     background: var(--green);
     transition: 0.5s;
-}
-.left-content-home button:hover{
+  }
+  
+  .left-content-home button:hover {
     cursor: pointer;
     background: var(--green);
     border-radius: 10px;
     color: white;
-}
-
-
-.inner-home .home-img{
+  }
+  
+  .inner-home .home-img {
     padding: 2rem;
-}
-.inner-home .home-img img{
+  }
+  
+  .inner-home .home-img img {
     width: 100%;
-}
-.About{
+  }
+  
+  .About {
     padding: 2rem 7%;
     background: #f5f5f5;
     background-image: url(images/Design\ Elements.png);
     background-position: 100% 100%;
-}
-
-.About h1{
+  }
+  
+  .About h1 {
     text-align: center;
     color: #b8860b;
     font-size: 36px;
-}
-
-
-.main-about{
+  }
+  
+  .main-about {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 50px;
-}
-.inner-about{
+  }
+  
+  .inner-about {
     flex: 1 1 45rem;
-}
-
-
-.right-content-about h2{
+  }
+  
+  .right-content-about h2 {
     font-size: 36px;
     color: #333;
     padding: 2rem 0;
-}
-.right-content-about h3{
+  }
+  
+  .right-content-about h3 {
     color: #b8860b;
     font-size: 36px;
     font-family: 'Dancing Script', cursive;
-}
-.right-content-about p{
+  }
+  
+  .right-content-about p {
     color: #333;
     font-size: 1.5rem;
     padding-bottom: 2rem;
-}
-.right-content-about button{
+  }
+  
+  .right-content-about button {
     padding: 1.5rem 2.5rem;
     font-size: 1.5rem;
     color: #e5e4e2;
     border: 1px solid var(--green);
     transition: 0.5s;
     background-color: var(--green);
-}
-.right-content-about button:hover{
+  }
+  
+  .right-content-about button:hover {
     cursor: pointer;
     background: var(--green);
     border-radius: 10px;
     color: #e5e4e2;
-}
-
-.inner-about .about-img{
+  }
+  
+  .inner-about .about-img {
     padding: 5rem;
-}
-.inner-about .about-img img{
+  }
+  
+  .inner-about .about-img img {
     width: 100%;
-}
-.our-menu-item{
+  }
+  
+  .our-menu-item {
     padding: 2rem 7%;
     background-color: #e5e4e2;
     background-image: url(images/Design\ Elements.png);
     background-position: 100% 100%;
-}
-
-.our-menu-item .heading-menu{
+    
+  
+  }
+  
+  .our-menu-item .heading-menu {
     text-align: center;
-}
-.our-menu-item .heading-menu h1{
+  }
+  
+  .our-menu-item .heading-menu h1 {
     font-size: 36px;
-}
-.our-menu-item .heading-menu h3{
+  }
+  
+  .our-menu-item .heading-menu h3 {
     font-size: 30px;
     color: #b8860b;
     font-family: 'Dancing Script', cursive;
     padding: 2rem 0;
-}
-.main-menu{
+  }
+  
+  .main-menu {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 8rem;
     justify-content: center;
     padding-top: 4rem;
-    
-}
-
-.inner-menu{
+  }
+  
+  .inner-menu {
     flex: 1 1 280px;
     text-align: center;
     background-color: white;
     position: relative;
     cursor: pointer;
     transition: 1s;
-}
-.inner-menu::after{
+  }
+  
+  .inner-menu::after {
     content: "";
     position: absolute;
     width: 0;
@@ -304,24 +421,23 @@ header{
     background: var(--green);
     left: 0;
     transition: 0.5s;
-    
-}
-.inner-menu:hover:after{
-   width: 100%;
-}
-
-.image-overlay{
+  }
+  
+  .inner-menu:hover:after {
+    width: 100%;
+  }
+  
+  .image-overlay {
     position: absolute;
-    
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: 100;
     transition: 0.5s;
-}
-
-.menu-main-icon{
+  }
+  
+  .menu-main-icon {
     position: absolute;
     top: 12rem;
     left: 30%;
@@ -329,241 +445,234 @@ header{
     z-index: 200;
     display: none;
     transition: 0.5;
-    
-}
-.menu-main-icon i{
+  }
+  
+  .menu-main-icon i {
     font-size: 22px;
     padding: 1rem;
     background: white;
     margin: 1rem;
-}
-.inner-menu:hover .menu-main-icon{
+  }
+  
+  .inner-menu:hover .menu-main-icon {
     display: initial;
-}
-.inner-menu:hover .image-overlay{
-    background: rgba(255,255,255,.3);
-}
-
-
-.inner-menu .menu-content{
+  }
+  
+  .inner-menu:hover .image-overlay {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  .inner-menu .menu-content {
     padding: 4rem;
     position: relative;
-}
-
-.inner-menu .menu-content img{
+  }
+  
+  .inner-menu .menu-content img {
     width: 100%;
-
-}
-.inner-menu .menu-content h4{
+  }
+  
+  .inner-menu .menu-content h4 {
     color: #b8860b;
     font-size: 30px;
     font-family: 'dancing script', cursive;
     padding: 0.5rem 0;
-}
-.menu-star i{
+  }
+  
+  .menu-star i {
     color: #b8860b;
     font-size: 18px;
     padding: 0.5rem 0;
-}
-
-
-.chose-us{
+  }
+  
+  .chose-us {
     padding: 4rem 7%;
     background-color: #e5e4e2;
-}
-.chose-headings{
+  }
+  
+  .chose-headings {
     text-align: center;
-}
-.chose-headings h4{
+  }
+  
+  .chose-headings h4 {
     color: #b8860b;
     font-size: 30px;
     font-family: 'dancing script', cursive;
-}
-.chose-headings h1{
+  }
+  
+  .chose-headings h1 {
     font-size: 36px;
     padding: 2rem 0;
     padding-bottom: 4rem;
-}
-.main-chose{
+  }
+  
+  .main-chose {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 50px;
-}
-.inner-chose{
+  }
+  
+  .inner-chose {
     flex: 1 1 300px;
     text-align: center;
     padding: 2rem;
     border: 1px solid var(--green);
     cursor: pointer;
-}
-.inner-chose:hover{
+  }
+  
+  .inner-chose:hover {
     border-radius: 10px;
-}
-.chose-content{
+  }
+  
+  .chose-content {
     padding: 1rem;
-}
-.chose-content h2{
+  }
+  
+  .chose-content h2 {
     color: var(--green);
     font-size: 25px;
     padding: 1rem;
-}
-.chose-content p{
+  }
+  
+  .chose-content p {
     font-size: 1.5rem;
-}
-
-.inner-chose{
+  }
+  
+  .inner-chose {
     background-color: white;
-}
-#history{
+  }
+  
+  #history {
     padding-top: 2rem !important;
-}
-.history-para{
+  }
+  
+  .history-para {
     text-align: left;
-}
-.history-para h2{
+  }
+  
+  .history-para h2 {
     color: #b8860b;
     font-size: 30px;
     font-family: 'dancing script', cursive;
-}
-.latest-new{
-    
+  }
+  
+  .latest-new {
     padding: 4rem 7%;
-}
-.latest-heading{
+  }
+  
+  .latest-heading {
     text-align: center;
-}
-.latest-heading h3{
+  }
+  
+  .latest-heading h3 {
     color: #b8860b;
     font-size: 30px;
     font-family: 'dancing script', cursive;
-}
-.latest-heading h1{
+  }
+  
+  .latest-heading h1 {
     font-size: 36px;
     padding: 2rem 0;
     padding-bottom: 4rem;
-}
-.main-latest{
+  }
+  
+  .main-latest {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 50px;
-}
-.inner-latest{
-    flex:  1 1 280px;
-}
-.inner-content img{
+  }
+  
+  .inner-latest {
+    flex: 1 1 280px;
+  }
+  
+  .inner-content img {
     width: 100%;
     border-radius: 15px;
-}
-.latest-content h2{
+  }
+  
+  .latest-content h2 {
     font-size: 22px;
     color: #b8860b;
     padding: 1rem 0;
-}
-.latest-content p{
+  }
+  
+  .latest-content p {
     font-size: 1.5rem;
     padding-bottom: 1.5rem;
-}
-.latest-content a{
+  }
+  
+  .latest-content a {
     color: #b8860b;
     font-size: 25px;
     font-family: 'dancing script', cursive;
-}
-.main-footer{
-     background-image: url(images/Design\ Elements.png); 
-      background-size: cover;  
-     background-repeat: no-repeat; 
-     background-position: 100% 100%; 
-    width: 100%;
-    max-height:100vh;
+  }
+  
+  .main-footer {
+    background-image: url(images/Design\ Elements.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    width: 1300PX;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     gap: 50px;
     flex-wrap: nowrap;
     background-color: white;
-     padding: 2rem 7%; 
+    padding: 2rem 7%;
+    
   }
-  .inner-footer{
+  
+  .inner-footer {
     flex: 1 1 10rem;
   }
-  .inner-footer a{
+  
+  .inner-footer a {
     display: block;
     color: #b8860b;
     padding: 1rem 1rem;
     font-size: 18px;
   }
-  .inner-footer a:hover{
+  
+  .inner-footer a:hover {
     margin-left: 10px;
   }
-::-webkit-scrollbar {
+  
+  ::-webkit-scrollbar {
     width: 10px;
   }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: var(--green); 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(red, yellow);
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+  /* Add this to your style.css file */
+.cart-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
 
+thead th, tbody td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
 
+.subtotal {
+  text-align: right;
+  margin-top: 20px; /* Add some margin to separate the buttons */
+}
 
+button {
+  cursor: pointer;
+  display: inline-block; /* Set buttons to be displayed inline-block */
+  margin-right: 10px; /* Add some margin between the buttons */
+}
 
-
-
-
-@media (max-width:768px) {
-    
-    header{
-        padding: 2rem;
-    }
-    html{
-        font-size: 55%;
-    }
-
-    .icons #menu-bar{
-        display: initial;
-    }
-
-    header .navbar{
-        position: absolute;
-        top:100%; left: 0; right:0;
-        background: #f7f7f7;
-        border-top: .1rem solid rgba(0,0,0,.1);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        height: 100vh;
-      }
-      header .navbar.active{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-      }
-     
-      header .navbar a{
-        margin: 1.5rem;
-        padding:1.5rem;
-        display: block;
-        border:.2rem solid rgba(0,0,0,.1);
-        border-left:.5rem solid var(--red);
-        background:var(--green);
-        color: white;
-      }
-
-      .inner-home .home-img{
-        padding: 1rem;
-    }
-    .home{
-        padding-top: 8rem;
-    }
-
-
+.back-menu {
+  display: inline-block; /* Set the back-menu button to be displayed inline-block */
 }
 
