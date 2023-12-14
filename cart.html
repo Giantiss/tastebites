@@ -21,11 +21,11 @@
     <div class="logo">
       <h1><i class="fas fa-utensils"></i>Taste<span>Bites</span></h1>
     </div>
-    <nav class="navbar">
-      <a href="#home">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="#items">Featured items</a>
-    </nav>
+  <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+           
+        </nav>
     <div class="icons">
       <div id="menu-bar" class="fas fa-bars"></div>
       <div id="cart"><i class="fas fa-cart-plus"></i></div>
@@ -54,7 +54,8 @@
         <div class="subtotal">
             <p>Total: <span id="subtotal">0.00</span></p>
             <button id="backToMenu" class="back-menu">back to menu</button>
-            <button id="checkoutButton">Proceed to Checkout</button>
+            <!-- <button id="checkoutButton">Proceed to Checkout</button> -->
+            <button class="awesome-checkout-button"></button>
         </div>
 
         
@@ -89,7 +90,58 @@
       </div>
     </div>
   </footer>
+  <script src="https://cdn.cellulant.africa/js/tingg-checkout-library.js"></script>
 
-  <script src="script.js"></script>
+<button class="awesome-checkout-button"></button>
+
+<script type="text/javascript">
+const payload = {
+    // un-encrypted parameters collected against a request in json format
+};
+const checkoutType = 'redirect'; // or 'modal'
+
+// Render the checkout button
+Tingg.renderPayButton({
+    text: 'pay with tingg',
+    color: 'green',
+    className: 'awesome-checkout-button'
+   
+})
+
+document
+.querySelector('.awesome-checkout-button')
+.addEventListener('click', function() {
+    
+            //Call the encryption URL to encrypt the params and render checkout
+            function encrypt() {
+                return fetch(
+                    "<YOUR_ENCRYPTION_ENDPOINT>",
+                    {
+                        method: 'POST',
+                        body: JSON.stringify(payload),
+                        mode: 'cors'
+                    }).then(response => response.json())
+            }
+            encrypt().then(response => {
+                    // Render the checkout page on click event
+                   Tingg.renderCheckout({
+			test: Boolean,
+			checkout_type: '',
+			checkout_payload: {
+					encrypted_payload: '',
+					access_key: ''
+			},
+		});
+
+                }
+            )
+                .catch(error => console.log(error));
+        });
+</script>
+<script src="script.js"></script>
+  
+
+
+  
 </body>
 </html>

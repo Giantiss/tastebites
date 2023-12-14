@@ -1,6 +1,8 @@
 body {
     background-color: #f1f1f1;
     overflow-x: hidden;
+    font-size: 16px;
+
   }
   
   .container {
@@ -20,13 +22,20 @@ body {
     width: 800px;
     height: 100%;
     margin: 20px; 
+    overflow-x: auto;
   }
     
-  table, th, td {
-    border: 1px solid black;
+  table {
+    width: 100%;
     border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead th, tbody td {
+    border: 1px solid #ccc;
     padding: 10px;
-  }
+    text-align: left;
+}
   
   .order-summary {
     margin-top: 20px;
@@ -87,7 +96,7 @@ body {
   .icons {
     display: flex;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 15px;
   }
   
   .icons div {
@@ -117,6 +126,9 @@ body {
     .cart-icon {
       display: none;
     }
+    .icons #menu-bar {
+      display: none;
+  }
   }
   
   html {
@@ -143,6 +155,7 @@ body {
   .logo i {
     margin-right: 10px;
   }
+  
   
   .navbar a {
     font-size: 18px;
@@ -188,7 +201,7 @@ body {
   .icons #cart {
     color: #62ae2f;
     font-size: 3rem;
-    margin-right: 3rem;
+    margin-right: 15rem;
   }
   
   .icons:hover {
@@ -643,7 +656,7 @@ body {
   ::-webkit-scrollbar {
     width: 10px;
   }
-  /* Add this to your style.css file */
+ 
 .cart-container {
   max-width: 800px;
   margin: 5rem auto 0
@@ -663,7 +676,7 @@ thead th, tbody td {
 
 .subtotal {
   text-align: right;
-  margin-top: 20px; /* Add some margin to separate the buttons */
+  margin-top: 20px auto; /* Add some margin to separate the buttons */
 }
 
 button {
@@ -675,4 +688,5 @@ button {
 .back-menu {
   display: inline-block; /* Set the back-menu button to be displayed inline-block */
 }
+
 

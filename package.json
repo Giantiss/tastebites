@@ -4,13 +4,14 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "json-server db.json --watch --port 5000"
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "json-server": "^0.17.4"
+  "dependencies": {
+    "@cellulant/checkout_encryption": "^1.0.4",
+    "express": "^4.18.2"
   }
 }
