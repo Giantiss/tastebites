@@ -19,7 +19,7 @@ body {
     text-align: center;
   }
   .table-container {
-    width: 800px;
+    width: 100%;
     height: 100%;
     margin: 20px; 
     overflow-x: auto;
@@ -52,7 +52,6 @@ thead th, tbody td {
     padding: 10px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    
     position: fixed;
     width: 100%;
     top: 0;
@@ -114,22 +113,49 @@ thead th, tbody td {
   .icons #cart {
     color: #62ae2f;
     font-size: 3rem;
+    margin-right: 15rem;
   }
   
   .icons:hover {
     cursor: pointer;
   }
-  
-  
-  
-  @media (min-width: 600px) {
+  @media (max-width: 600px) {
     .cart-icon {
-      display: none;
+        display: none;
     }
+
     .icons #menu-bar {
-      display: none;
-  }
-  }
+        display: inline;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    .icons #cart {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 40px auto;
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    .icons #cart {
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+}
+  
+  
+  
+  
+  
   
   html {
     font-size: 62.5%;
@@ -627,14 +653,14 @@ thead th, tbody td {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 100% 100%;
-    width: 1300PX;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
     gap: 50px;
     flex-wrap: nowrap;
     background-color: white;
-    padding: 2rem 7%;
+    padding: 2rem 0;
     
   }
   

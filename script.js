@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Set up event listeners for buttons
 function setupEventListeners() {
     // Get buttons by their IDs
+   
     const checkoutButton = document.getElementById('checkoutButton');
     const backToMenuButton = document.getElementById('backToMenu');
 
