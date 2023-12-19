@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
 const app = express();
 const port = 5000;
-// import the redirect url
-const redirect_url = require('./redirect_url');
+let checkoutEncrypt = require('@cellulant/checkout_encryption');
+require('dotenv').config();
 // Custom middleware function for logging requests, responses, and errors and passing control to the next middleware function in the request processing pipeline
 function logRequests(req, res, next) {
   // Log the request to the console
@@ -158,9 +158,42 @@ app.get('/checkout', (req, res) => {
   //get total price from session
   const totalPrice = req.session.totalPrice;
   //get the redirect url 
-  // const redirect_url = redirect_url;
+//generate 6 digit random number
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+// Initialize merchant variables
+const accessKey = process.env.ACCESS_KEY;
+const IVKey = process.env.IV_KEY;
+const secretKey = process.env.SECRET_KEY;
+const algorithm = "aes-256-cbc";
+
+  // encrypt the payload
+var payloadobj = {
+  "msisdn":"+254725135903",
+  "account_number":"oid39",
+  "country_code":"KEN",
+  "currency_code":"KES",
+  "due_date":"2024-01-01 00:00:00",
+  "fail_redirect_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
+  "merchant_transaction_id":getRandomInt(1000000),
+  "callback_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
+  "request_amount":req.session.totalPrice,
+  "success_redirect_url":"https://tastebites-qioi.onrender.com/cart",
+  "service_code":"YELLOWGEM",
+}
+const payloadStr = JSON.stringify(payloadobj);
+  // Create object of the Encryption class  
+  let encryption = new checkoutEncrypt.Encryption(IVKey, secretKey, algorithm);
+  // Encrypt the payload
+   // call encrypt method
+ var result = encryption.encrypt(payloadStr);
+// redirect url
+redirect_url = `https://online.uat.tingg.africa/testing/express/checkout?access_key=${accessKey}&encrypted_payload=${result}`;
+
   //render the checkout page and pass the total price and redirect url to it
-  res.render('checkout', {totalPrice, redirect_url});
+  res.redirect(redirect_url);
 });
 
 // Start server

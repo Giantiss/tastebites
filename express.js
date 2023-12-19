@@ -5,8 +5,6 @@ let checkoutEncrypt = require('@cellulant/checkout_encryption');
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
-
-transa
 // Initialize merchant variables
 const accessKey = process.env.ACCESS_KEY;
 const IVKey = process.env.IV_KEY;
