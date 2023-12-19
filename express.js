@@ -5,8 +5,6 @@ let checkoutEncrypt = require('@cellulant/checkout_encryption');
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
-
-transa
 // Initialize merchant variables
 const accessKey = process.env.ACCESS_KEY;
 const IVKey = process.env.IV_KEY;
@@ -37,3 +35,5 @@ const payloadStr = JSON.stringify(payloadobj);
 redirect_url = `https://online.uat.tingg.africa/testing/express/checkout?access_key=${accessKey}&encrypted_payload=${result}`;
  // print the result
  console.log(redirect_url);
+ //export the redirect url
+  module.exports = redirect_url;
