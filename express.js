@@ -1,4 +1,10 @@
 let checkoutEncrypt = require('@cellulant/checkout_encryption');
+//generate 6 digit random number
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+transa
 // Initialize merchant variables
 const accessKey = "4INFNjF4VY3iFSjDIYVSSZF4VFNSjVFaYjiVFFFNijN4FV4jjjjD04aaYajZ"
 const IVKey = "3E9XVSxLiqDkeJdl";
@@ -13,10 +19,10 @@ var payloadobj = {
   "currency_code":"KES",
   "due_date":"2024-01-01 00:00:00",
   "fail_redirect_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
-  "merchant_transaction_id":"txn_id_342",
+  "merchant_transaction_id":"002",
   "callback_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
   "request_amount":"100",
-  "success_redirect_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
+  "success_redirect_url":"https://tastebites-qioi.onrender.com/cart",
   "service_code":"YELLOWGEM",
 }
 const payloadStr = JSON.stringify(payloadobj);

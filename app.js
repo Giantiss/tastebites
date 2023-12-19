@@ -5,6 +5,18 @@ const sqlite3 = require('sqlite3').verbose();
 const app = express();
 const port = 5000;
 let checkoutEncrypt = require('@cellulant/checkout_encryption');
+
+// Custom middleware function for logging requests
+function logRequests(req, res, next) {
+  console.log(`${new Date()}: ${req.method} ${req.url}`);
+  next();
+}
+
+// Use the middleware function in the request processing pipeline
+app.use(logRequests);
+
+
+
 //Sqlite database connection
 db = new sqlite3.Database('./tastyb', (err) => {
   if (err) {
@@ -12,84 +24,6 @@ db = new sqlite3.Database('./tastyb', (err) => {
   }
   console.log('Connected to the database.');
 });
-
-
-// db.close((err) => {
-//   if (err) {
-//     return console.error(err.message);
-//   }
-//   console.log('Closed the database connection.');
-// });
-
-
-
-
-// // MySQL Connection
-// const db = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'giant',
-//   password: 'Bmw.gentleman',
-//   database: 'tastebites',
-//   authPlugin: 'mysql_native_password',
-// });
-
-// db.connect((err) => {
-//   if (err) {
-//     console.error('Error connecting to MySQL: ' + err.stack);
-//     return;
-//   }
-//   console.log('Connected to MySQL as id ' + db.threadId);
-//       // SQL query to create the 'foods' table
-//     const createFoodsTableQuery = `
-//       CREATE TABLE IF NOT EXISTS foods (
-//         id INT AUTO_INCREMENT PRIMARY KEY,
-//         title VARCHAR(255) NOT NULL,
-//         price DECIMAL(10, 2) NOT NULL,
-//         image VARCHAR(255)
-//       )
-//     `;
-  
-//     // Execute the query to create the 'foods' table
-//     db.query(createFoodsTableQuery, (err, result) => {
-//       if (err) {
-//         console.error('Error creating foods table: ' + err.stack);
-//         return;
-//       }
-//       console.log('Foods table created successfully');
-//       // Close the connection after the query is executed (optional)
-//       // db.end();
-//     }); 
-//   // SQL query to insert sample data into the 'foods' table
-//   // const insertSampleDataQuery = `
-//   //   INSERT INTO foods (title, price, image) VALUES
-//   //     ('Shawarma', 200.00, '/images/food1.png'),
-//   //     ('Stir Fry', 300.00, '/images/food2.png'),
-//   //     ('Burger', 180.00, '/images/food3.png'),
-//   //     ('Pizza', 250.00, '/images/food4.png'),
-//   //     ('Chicken', 200.00, '/images/food5.png'),
-//   //     ('Fried Rice', 300.00, '/images/food6.png'),
-//   //     ('Fried Chicken', 180.00, '/images/food7.png'),
-//   //     ('Chicken Salad', 250.00, '/images/food8.png'),
-//   //     ('Chicken Wings', 200.00, '/images/food9.png'),
-//   //     ('Chicken Burger', 300.00, '/images/food10.png'),
-//   //     ('Chicken Shawarma', 180.00, '/images/food11.png'),
-//   //     ('Sushi Roll', 320.00, '/images/food12.png')
-//   // `;
-
-//   // // Execute the query to insert sample data into the 'foods' table
-//   // db.query(insertSampleDataQuery, (err, result) => {
-//   //   if (err) {
-//   //     console.error('Error inserting sample data: ' + err.stack);
-//   //     return;
-//   //   }
-//   //   console.log('Sample data inserted into the foods table successfully');
-
-//   //   // Close the connection after the query is executed (optional)
-//   //   // db.end();
-//   // }); 
-// });
-
-
 
 // Set up middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -238,5 +172,6 @@ redirect_url = `https://online.uat.tingg.africa/testing/express/checkout?access_
 
 // Start server
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  //console log a message when the server starts listening and the current date and time
+  console.log(`${new Date()}: Server started on port ${port}`);
 });
