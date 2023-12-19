@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 let checkoutEncrypt = require('@cellulant/checkout_encryption');
 //generate 6 digit random number
 function getRandomInt(max) {
@@ -6,9 +8,9 @@ function getRandomInt(max) {
 
 transa
 // Initialize merchant variables
-const accessKey = "4INFNjF4VY3iFSjDIYVSSZF4VFNSjVFaYjiVFFFNijN4FV4jjjjD04aaYajZ"
-const IVKey = "3E9XVSxLiqDkeJdl";
-const secretKey = "FiVjYS3F40ZaDIjN";
+const accessKey = process.env.ACCESS_KEY;
+const IVKey = process.env.IV_KEY;
+const secretKey = process.env.SECRET_KEY;
 const algorithm = "aes-256-cbc";
 
   // encrypt the payload
