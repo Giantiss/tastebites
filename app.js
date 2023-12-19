@@ -5,6 +5,37 @@ const sqlite3 = require('sqlite3').verbose();
 const app = express();
 const port = 5000;
 let checkoutEncrypt = require('@cellulant/checkout_encryption');
+require('dotenv').config();
+// Custom middleware function for logging requests, responses, and errors and passing control to the next middleware function in the request processing pipeline
+function logRequests(req, res, next) {
+  // Log the request to the console
+  console.log(`${new Date()}: ${req.method} ${req.url}`);
+  next();
+}
+// Custom middleware function for logging errors and passing control to the next middleware function in the request processing pipeline
+function logErrors(err, req, res, next) {
+  // Log the error to the console
+  console.error(err.stack);
+  next(err);
+}
+// custom middleware function for handling errors
+function errorHandler(err, req, res, next) {
+  // Check if the error is a 404 error
+  if (err.status === 404) {
+    return res.status(404).send('Not Found');
+  }
+  // Check if the error is a 500 error
+  if (err.status === 500) {
+    return res.status(500).send('Internal Server Error');
+  }
+  // If the error is not a 404 or 500 error, set the status code to 500
+  res.status(500);
+}
+
+// Use the middleware function in the request processing pipeline
+app.use(logRequests);
+app.use(logErrors);
+app.use(errorHandler);
 //Sqlite database connection
 db = new sqlite3.Database('./tastyb', (err) => {
   if (err) {
@@ -12,84 +43,6 @@ db = new sqlite3.Database('./tastyb', (err) => {
   }
   console.log('Connected to the database.');
 });
-
-
-// db.close((err) => {
-//   if (err) {
-//     return console.error(err.message);
-//   }
-//   console.log('Closed the database connection.');
-// });
-
-
-
-
-// // MySQL Connection
-// const db = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'giant',
-//   password: 'Bmw.gentleman',
-//   database: 'tastebites',
-//   authPlugin: 'mysql_native_password',
-// });
-
-// db.connect((err) => {
-//   if (err) {
-//     console.error('Error connecting to MySQL: ' + err.stack);
-//     return;
-//   }
-//   console.log('Connected to MySQL as id ' + db.threadId);
-//       // SQL query to create the 'foods' table
-//     const createFoodsTableQuery = `
-//       CREATE TABLE IF NOT EXISTS foods (
-//         id INT AUTO_INCREMENT PRIMARY KEY,
-//         title VARCHAR(255) NOT NULL,
-//         price DECIMAL(10, 2) NOT NULL,
-//         image VARCHAR(255)
-//       )
-//     `;
-  
-//     // Execute the query to create the 'foods' table
-//     db.query(createFoodsTableQuery, (err, result) => {
-//       if (err) {
-//         console.error('Error creating foods table: ' + err.stack);
-//         return;
-//       }
-//       console.log('Foods table created successfully');
-//       // Close the connection after the query is executed (optional)
-//       // db.end();
-//     }); 
-//   // SQL query to insert sample data into the 'foods' table
-//   // const insertSampleDataQuery = `
-//   //   INSERT INTO foods (title, price, image) VALUES
-//   //     ('Shawarma', 200.00, '/images/food1.png'),
-//   //     ('Stir Fry', 300.00, '/images/food2.png'),
-//   //     ('Burger', 180.00, '/images/food3.png'),
-//   //     ('Pizza', 250.00, '/images/food4.png'),
-//   //     ('Chicken', 200.00, '/images/food5.png'),
-//   //     ('Fried Rice', 300.00, '/images/food6.png'),
-//   //     ('Fried Chicken', 180.00, '/images/food7.png'),
-//   //     ('Chicken Salad', 250.00, '/images/food8.png'),
-//   //     ('Chicken Wings', 200.00, '/images/food9.png'),
-//   //     ('Chicken Burger', 300.00, '/images/food10.png'),
-//   //     ('Chicken Shawarma', 180.00, '/images/food11.png'),
-//   //     ('Sushi Roll', 320.00, '/images/food12.png')
-//   // `;
-
-//   // // Execute the query to insert sample data into the 'foods' table
-//   // db.query(insertSampleDataQuery, (err, result) => {
-//   //   if (err) {
-//   //     console.error('Error inserting sample data: ' + err.stack);
-//   //     return;
-//   //   }
-//   //   console.log('Sample data inserted into the foods table successfully');
-
-//   //   // Close the connection after the query is executed (optional)
-//   //   // db.end();
-//   // }); 
-// });
-
-
 
 // Set up middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -201,11 +154,19 @@ app.post('/remove-item', (req, res) => {
 });
 
 //other routes and configurations...
-app.post('/checkout', (req, res) => {
+app.get('/checkout', (req, res) => {
+  //get total price from session
+  const totalPrice = req.session.totalPrice;
+  //get the redirect url 
+//generate 6 digit random number
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 // Initialize merchant variables
-const accessKey = "4INFNjF4VY3iFSjDIYVSSZF4VFNSjVFaYjiVFFFNijN4FV4jjjjD04aaYajZ"
-const IVKey = "3E9XVSxLiqDkeJdl";
-const secretKey = "FiVjYS3F40ZaDIjN";
+const accessKey = process.env.ACCESS_KEY;
+const IVKey = process.env.IV_KEY;
+const secretKey = process.env.SECRET_KEY;
 const algorithm = "aes-256-cbc";
 
   // encrypt the payload
@@ -216,10 +177,10 @@ var payloadobj = {
   "currency_code":"KES",
   "due_date":"2024-01-01 00:00:00",
   "fail_redirect_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
-  "merchant_transaction_id":"txn_id_342",
+  "merchant_transaction_id":getRandomInt(1000000),
   "callback_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
-  "request_amount":"100",
-  "success_redirect_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
+  "request_amount":req.session.totalPrice,
+  "success_redirect_url":"https://tastebites-qioi.onrender.com/cart",
   "service_code":"YELLOWGEM",
 }
 const payloadStr = JSON.stringify(payloadobj);
@@ -230,13 +191,13 @@ const payloadStr = JSON.stringify(payloadobj);
  var result = encryption.encrypt(payloadStr);
 // redirect url
 redirect_url = `https://online.uat.tingg.africa/testing/express/checkout?access_key=${accessKey}&encrypted_payload=${result}`;
- // print the result
- console.log(result);
- // render the result link to the checkout button
-  res.render('checkout', {redirect_url: redirect_url});
+
+  //render the checkout page and pass the total price and redirect url to it
+  res.redirect(redirect_url);
 });
 
 // Start server
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  //console log a message when the server starts listening and the current date and time
+  console.log(`${new Date()}: Server started on port ${port}`);
 });

@@ -14,7 +14,7 @@
     <!-- css link here -->
   <!-- css link here -->
   <link rel="stylesheet" href="/css/style.css" />
-  <title>Taste Bites</title>
+  <title>TasteBites | Checkout</title>
 </head>
 <body>
   <header class="header">
@@ -38,54 +38,18 @@
   </header>
 
   <div class="home" id="home">
-    <div class="center-container">
-      <div class="cart-container">
-        <table>
-          <thead>
-              <tr>
-                  <th>Title</th>
-                  <th>Quantity</th>
-                  <th>Price</th>
-                  <th>Subtotal</th>
-                  <th>Remove</th>
-              </tr>
-          </thead>
-          <tbody>
-              <% cartItems.forEach(function(item) { %>
-                  <tr>
-                      <td><%= item.title %></td>
-                      <td><%= item.quantity %></td>
-                      <td><%= item.price %></td>
-                      <td><%= (item.quantity * item.price).toFixed(2) %></td>
-                      <td>
-                          <form method="POST" action="/remove-item">
-                              <input type="hidden" name="id" value="<%= item.id %>">
-                              <button type="submit" class="btn btn-danger">Remove</button>
-                          </form>
-                      </td>
-                  </tr>
-              <% }); %>
-              <tr>
-                  <td colspan="3">Total:</td>
-                  <td><%= totalPrice.toFixed(2) %></td>
-                  <td></td> <!-- Empty cell for alignment -->
-              </tr>
-          </tbody>
-      </table>
-      <div class="subtotal">
-        <a href="/menu">
-        <button href="/menu" class="btn btn-outline-primary btn-lg">Back to Menu</button>
+    <div class="question">
+        <br>
+        <br>
+        <br>
+        <h2>Confirmation of payment</h2>
+        <p>Are you sure you want to proceed with the payment of KES <%= totalPrice %>?</p>
+        <button id="exp-checkout" class="btn btn-outline-success btn-lg">Pay Now</button>
+        <a href="/cart">
+        <button class="btn btn-outline-danger btn-lg">Quit</button>
         </a>
-        <!-- <button id="checkoutButton">Proceed to Checkout</button>  -->
-        <a href="/checkout">
-        <button class="awesome-checkout-button"></button>
-        </a>
-    </div>       
-        
-    </div>
     </div>
   </div>
-
   <footer>
     <div class="main-footer">
       <div class="inner-footer">
@@ -117,3 +81,4 @@
   <script src="/js/script.js"></script>
 </body>
 </html>
+
