@@ -6,32 +6,20 @@ const app = express();
 const port = 5000;
 let checkoutEncrypt = require('@cellulant/checkout_encryption');
 //Sqlite database connection
-db = new sqlite3.Database('./database.db', (err) => {
+db = new sqlite3.Database('./tastyb', (err) => {
   if (err) {
     return console.error(err.message);
   }
   console.log('Connected to the database.');
 });
-//create table foods with title as unique
-db.run('CREATE TABLE IF NOT EXISTS foods (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT UNIQUE, price REAL, image TEXT)', (err) => {
-  if (err) {
-    return console.error(err.message);
-  }
-  console.log('Created table foods.');
-});
-//insert sample data into the foods table
-db.run('INSERT INTO foods (title, price, image) VALUES (?, ?, ?)', ['Shawarma', 200.00, '/images/food1.png'], (err) => {
-  if (err) {
-    return console.error(err.message);
-  }
-  console.log('Inserted sample data into the foods table.');
-});
-db.close((err) => {
-  if (err) {
-    return console.error(err.message);
-  }
-  console.log('Closed the database connection.');
-});
+
+
+// db.close((err) => {
+//   if (err) {
+//     return console.error(err.message);
+//   }
+//   console.log('Closed the database connection.');
+// });
 
 
 
@@ -133,37 +121,20 @@ app.use((req, res, next) => {
 // Routes
 app.get('/', (req, res) => {
   //get 5 foods from the database ordered by id
-  //// db.query('SELECT * FROM foods ORDER BY id DESC LIMIT 5', (err, result) => {
-  ////   if(err) throw err;
+  db.all('SELECT * FROM foods ORDER BY id DESC LIMIT 5', (err, result) => {
+    if(err) throw err;
     res.render('index', {foods: result});
   });
+});
 
 app.get('/menu', (req, res) => {
-    // db.connect((err) => {
-    //   if (err) {
-    //     console.error('Error connecting to MySQL: ' + err.stack);
-    //     return;
-    //   }
-    //   console.log('Connected to MySQL as id ' + db.threadId);
-  
-    //   const selectSampleDataQuery = `SELECT * FROM foods`;
-  
-    //   db.query(selectSampleDataQuery, (err, results) => {
-    //     if (err) {
-    //       console.error('Error selecting sample data: ' + err.stack);
-    //       return;
-    //     }
-  
-    //     console.log('Sample data from the foods table:');
-    //     console.table(results); // Display the results in a table format
-  
-        // Render the menu.ejs template and pass the fetched data
-        res.render('menu', { foods: results });
-  
-        // Close the connection after rendering the template (optional)
-        // db.end();
+  //get all foods from the database ordered by id
+  db.all('SELECT * FROM foods ORDER BY id DESC', (err, result) => {
+    if(err) throw err;
+    // render the menu page and pass the foods to it
+    res.render('menu', {foods: result});
       });
-
+});
 // Function to calculate the total price of items in the cart
 function calculateTotalPrice(cartItems) {
   let totalPrice = 0;
