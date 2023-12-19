@@ -1,74 +1,105 @@
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
-const mysql = require('mysql2');
+const sqlite3 = require('sqlite3').verbose();
 const app = express();
 const port = 5000;
 let checkoutEncrypt = require('@cellulant/checkout_encryption');
-// MySQL Connection
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'giant',
-  password: 'Bmw.gentleman',
-  database: 'tastebites',
-  authPlugin: 'mysql_native_password',
-});
-
-db.connect((err) => {
+//Sqlite database connection
+db = new sqlite3.Database('./database.db', (err) => {
   if (err) {
-    console.error('Error connecting to MySQL: ' + err.stack);
-    return;
+    return console.error(err.message);
   }
-  console.log('Connected to MySQL as id ' + db.threadId);
-      // SQL query to create the 'foods' table
-    const createFoodsTableQuery = `
-      CREATE TABLE IF NOT EXISTS foods (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        title VARCHAR(255) NOT NULL,
-        price DECIMAL(10, 2) NOT NULL,
-        image VARCHAR(255)
-      )
-    `;
-  
-    // Execute the query to create the 'foods' table
-    db.query(createFoodsTableQuery, (err, result) => {
-      if (err) {
-        console.error('Error creating foods table: ' + err.stack);
-        return;
-      }
-      console.log('Foods table created successfully');
-      // Close the connection after the query is executed (optional)
-      // db.end();
-    }); 
-  // SQL query to insert sample data into the 'foods' table
-  // const insertSampleDataQuery = `
-  //   INSERT INTO foods (title, price, image) VALUES
-  //     ('Shawarma', 200.00, '/images/food1.png'),
-  //     ('Stir Fry', 300.00, '/images/food2.png'),
-  //     ('Burger', 180.00, '/images/food3.png'),
-  //     ('Pizza', 250.00, '/images/food4.png'),
-  //     ('Chicken', 200.00, '/images/food5.png'),
-  //     ('Fried Rice', 300.00, '/images/food6.png'),
-  //     ('Fried Chicken', 180.00, '/images/food7.png'),
-  //     ('Chicken Salad', 250.00, '/images/food8.png'),
-  //     ('Chicken Wings', 200.00, '/images/food9.png'),
-  //     ('Chicken Burger', 300.00, '/images/food10.png'),
-  //     ('Chicken Shawarma', 180.00, '/images/food11.png'),
-  //     ('Sushi Roll', 320.00, '/images/food12.png')
-  // `;
-
-  // // Execute the query to insert sample data into the 'foods' table
-  // db.query(insertSampleDataQuery, (err, result) => {
-  //   if (err) {
-  //     console.error('Error inserting sample data: ' + err.stack);
-  //     return;
-  //   }
-  //   console.log('Sample data inserted into the foods table successfully');
-
-  //   // Close the connection after the query is executed (optional)
-  //   // db.end();
-  // }); 
+  console.log('Connected to the database.');
 });
+//create table foods with title as unique
+db.run('CREATE TABLE IF NOT EXISTS foods (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT UNIQUE, price REAL, image TEXT)', (err) => {
+  if (err) {
+    return console.error(err.message);
+  }
+  console.log('Created table foods.');
+});
+//insert sample data into the foods table
+db.run('INSERT INTO foods (title, price, image) VALUES (?, ?, ?)', ['Shawarma', 200.00, '/images/food1.png'], (err) => {
+  if (err) {
+    return console.error(err.message);
+  }
+  console.log('Inserted sample data into the foods table.');
+});
+db.close((err) => {
+  if (err) {
+    return console.error(err.message);
+  }
+  console.log('Closed the database connection.');
+});
+
+
+
+
+// // MySQL Connection
+// const db = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'giant',
+//   password: 'Bmw.gentleman',
+//   database: 'tastebites',
+//   authPlugin: 'mysql_native_password',
+// });
+
+// db.connect((err) => {
+//   if (err) {
+//     console.error('Error connecting to MySQL: ' + err.stack);
+//     return;
+//   }
+//   console.log('Connected to MySQL as id ' + db.threadId);
+//       // SQL query to create the 'foods' table
+//     const createFoodsTableQuery = `
+//       CREATE TABLE IF NOT EXISTS foods (
+//         id INT AUTO_INCREMENT PRIMARY KEY,
+//         title VARCHAR(255) NOT NULL,
+//         price DECIMAL(10, 2) NOT NULL,
+//         image VARCHAR(255)
+//       )
+//     `;
+  
+//     // Execute the query to create the 'foods' table
+//     db.query(createFoodsTableQuery, (err, result) => {
+//       if (err) {
+//         console.error('Error creating foods table: ' + err.stack);
+//         return;
+//       }
+//       console.log('Foods table created successfully');
+//       // Close the connection after the query is executed (optional)
+//       // db.end();
+//     }); 
+//   // SQL query to insert sample data into the 'foods' table
+//   // const insertSampleDataQuery = `
+//   //   INSERT INTO foods (title, price, image) VALUES
+//   //     ('Shawarma', 200.00, '/images/food1.png'),
+//   //     ('Stir Fry', 300.00, '/images/food2.png'),
+//   //     ('Burger', 180.00, '/images/food3.png'),
+//   //     ('Pizza', 250.00, '/images/food4.png'),
+//   //     ('Chicken', 200.00, '/images/food5.png'),
+//   //     ('Fried Rice', 300.00, '/images/food6.png'),
+//   //     ('Fried Chicken', 180.00, '/images/food7.png'),
+//   //     ('Chicken Salad', 250.00, '/images/food8.png'),
+//   //     ('Chicken Wings', 200.00, '/images/food9.png'),
+//   //     ('Chicken Burger', 300.00, '/images/food10.png'),
+//   //     ('Chicken Shawarma', 180.00, '/images/food11.png'),
+//   //     ('Sushi Roll', 320.00, '/images/food12.png')
+//   // `;
+
+//   // // Execute the query to insert sample data into the 'foods' table
+//   // db.query(insertSampleDataQuery, (err, result) => {
+//   //   if (err) {
+//   //     console.error('Error inserting sample data: ' + err.stack);
+//   //     return;
+//   //   }
+//   //   console.log('Sample data inserted into the foods table successfully');
+
+//   //   // Close the connection after the query is executed (optional)
+//   //   // db.end();
+//   // }); 
+// });
 
 
 
@@ -102,30 +133,29 @@ app.use((req, res, next) => {
 // Routes
 app.get('/', (req, res) => {
   //get 5 foods from the database ordered by id
-  db.query('SELECT * FROM foods ORDER BY id DESC LIMIT 5', (err, result) => {
-    if(err) throw err;
+  //// db.query('SELECT * FROM foods ORDER BY id DESC LIMIT 5', (err, result) => {
+  ////   if(err) throw err;
     res.render('index', {foods: result});
   });
-});
 
 app.get('/menu', (req, res) => {
-    db.connect((err) => {
-      if (err) {
-        console.error('Error connecting to MySQL: ' + err.stack);
-        return;
-      }
-      console.log('Connected to MySQL as id ' + db.threadId);
+    // db.connect((err) => {
+    //   if (err) {
+    //     console.error('Error connecting to MySQL: ' + err.stack);
+    //     return;
+    //   }
+    //   console.log('Connected to MySQL as id ' + db.threadId);
   
-      const selectSampleDataQuery = `SELECT * FROM foods`;
+    //   const selectSampleDataQuery = `SELECT * FROM foods`;
   
-      db.query(selectSampleDataQuery, (err, results) => {
-        if (err) {
-          console.error('Error selecting sample data: ' + err.stack);
-          return;
-        }
+    //   db.query(selectSampleDataQuery, (err, results) => {
+    //     if (err) {
+    //       console.error('Error selecting sample data: ' + err.stack);
+    //       return;
+    //     }
   
-        console.log('Sample data from the foods table:');
-        console.table(results); // Display the results in a table format
+    //     console.log('Sample data from the foods table:');
+    //     console.table(results); // Display the results in a table format
   
         // Render the menu.ejs template and pass the fetched data
         res.render('menu', { foods: results });
@@ -133,8 +163,6 @@ app.get('/menu', (req, res) => {
         // Close the connection after rendering the template (optional)
         // db.end();
       });
-    });
-  });
 
 // Function to calculate the total price of items in the cart
 function calculateTotalPrice(cartItems) {
@@ -204,9 +232,9 @@ app.post('/remove-item', (req, res) => {
 //other routes and configurations...
 app.post('/checkout', (req, res) => {
 // Initialize merchant variables
-const accessKey = "<YOUR_ACCESS_KEY>"
-const IVKey = "<YOUR_IV_KEY>";
-const secretKey = "<YOUR_SECRET_KEY>";
+const accessKey = "4INFNjF4VY3iFSjDIYVSSZF4VFNSjVFaYjiVFFFNijN4FV4jjjjD04aaYajZ"
+const IVKey = "3E9XVSxLiqDkeJdl";
+const secretKey = "FiVjYS3F40ZaDIjN";
 const algorithm = "aes-256-cbc";
 
   // encrypt the payload
@@ -221,18 +249,22 @@ var payloadobj = {
   "callback_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
   "request_amount":"100",
   "success_redirect_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
-  "service_code":"ABCDEXAMPLEONLINE",
+  "service_code":"YELLOWGEM",
 }
-const payloadStr = JSON.stringify(payloadObj);
+const payloadStr = JSON.stringify(payloadobj);
   // Create object of the Encryption class  
   let encryption = new checkoutEncrypt.Encryption(IVKey, secretKey, algorithm);
   // Encrypt the payload
    // call encrypt method
  var result = encryption.encrypt(payloadStr);
-
+// redirect url
+redirect_url = `https://online.uat.tingg.africa/testing/express/checkout?access_key=${accessKey}&encrypted_payload=${result}`;
  // print the result
  console.log(result);
+ // render the result link to the checkout button
+  res.render('checkout', {redirect_url: redirect_url});
 });
+
 // Start server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
