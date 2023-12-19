@@ -37,3 +37,5 @@ const payloadStr = JSON.stringify(payloadobj);
 redirect_url = `https://online.uat.tingg.africa/testing/express/checkout?access_key=${accessKey}&encrypted_payload=${result}`;
  // print the result
  console.log(redirect_url);
+ //export the redirect url
+  module.exports = redirect_url;
