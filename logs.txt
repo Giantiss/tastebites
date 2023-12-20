@@ -1,0 +1,333 @@
+C:\Users\user\OneDrive\Desktop\New folder\tastebites>npm start
+
+> tastebites@1.0.0 start
+> node app.js
+
+Wed Dec 20 2023 16:34:26 GMT+0300 (East Africa Time): Server started on port 5000
+Connected to the database.
+Wed Dec 20 2023 16:34:47 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:34:50 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:34:50 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:34:50 GMT+0300 (East Africa Time): GET /images/food12.png
+Wed Dec 20 2023 16:34:50 GMT+0300 (East Africa Time): GET /images/food9.png
+Wed Dec 20 2023 16:34:50 GMT+0300 (East Africa Time): GET /images/food11.png
+Wed Dec 20 2023 16:34:50 GMT+0300 (East Africa Time): GET /images/food8.png
+Wed Dec 20 2023 16:34:50 GMT+0300 (East Africa Time): GET /images/food10.png
+Wed Dec 20 2023 16:34:52 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:34:53 GMT+0300 (East Africa Time): GET /images/food7.png
+Wed Dec 20 2023 16:34:53 GMT+0300 (East Africa Time): GET /images/food6.png
+Wed Dec 20 2023 16:34:53 GMT+0300 (East Africa Time): GET /images/food5.png
+Wed Dec 20 2023 16:34:54 GMT+0300 (East Africa Time): GET /images/food4.png
+Wed Dec 20 2023 16:34:54 GMT+0300 (East Africa Time): GET /images/food3.png
+Wed Dec 20 2023 16:34:54 GMT+0300 (East Africa Time): GET /menu
+Wed Dec 20 2023 16:34:55 GMT+0300 (East Africa Time): GET /images/food2.png
+Wed Dec 20 2023 16:34:55 GMT+0300 (East Africa Time): GET /images/food1.png
+Wed Dec 20 2023 16:34:57 GMT+0300 (East Africa Time): GET /css/images/Design%20Elements.png
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /images/food12.png
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /images/food11.png
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /images/food10.png
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /images/food9.png
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /images/food8.png
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /images/food7.png
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /images/food6.png
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /images/food5.png
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /css/images/Design%20Elements.png
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /images/food4.png
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /images/food3.png
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /images/food2.png
+Wed Dec 20 2023 16:34:58 GMT+0300 (East Africa Time): GET /images/food1.png
+Wed Dec 20 2023 16:35:04 GMT+0300 (East Africa Time): POST /add-to-cart
+Wed Dec 20 2023 16:35:04 GMT+0300 (East Africa Time): GET /menu
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /images/food12.png
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /images/food11.png
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /images/food10.png
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /images/food9.png
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /images/food8.png
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /images/food7.png
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /images/food6.png
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /images/food5.png
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /images/food4.png
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /images/food3.png
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /images/food2.png
+Wed Dec 20 2023 16:35:05 GMT+0300 (East Africa Time): GET /images/food1.png
+Wed Dec 20 2023 16:35:08 GMT+0300 (East Africa Time): POST /add-to-cart
+Wed Dec 20 2023 16:35:08 GMT+0300 (East Africa Time): GET /menu
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /images/food12.png
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /images/food11.png
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /images/food10.png
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /images/food9.png
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /images/food8.png
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /images/food7.png
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /images/food6.png
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /images/food5.png
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /images/food4.png
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /images/food3.png
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /images/food2.png
+Wed Dec 20 2023 16:35:09 GMT+0300 (East Africa Time): GET /images/food1.png
+Wed Dec 20 2023 16:35:11 GMT+0300 (East Africa Time): GET /cart
+Wed Dec 20 2023 16:35:11 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:35:11 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:35:14 GMT+0300 (East Africa Time): GET /checkout
+Wed Dec 20 2023 16:35:55 GMT+0300 (East Africa Time): POST /success
+Callback Received {
+  request_status_code: '178',
+  merchant_transaction_id: '691051',
+  checkout_request_id: '234556',
+  service_code: 'YELLOWGEM',
+  account_number: 'oid39',
+  currency_code: 'KES',
+  request_amount: '500',
+  amount_paid: '500.00',
+  payments: '[{"id":47590,"msisdn":254718880078,"payment_option_transaction_id":"057add5c-e1f7-4726-a927-b614e2c00c59","account_number":"oid39","customer_name":"Customer","amount_paid":500,"gateway_transaction_id":"525305308659085312","date_payment_received":"2023-12-20 16:35:50","gateway_overall_status":139,"currency_id":"70","country_id":"117","service_id":"2520","payer_narration":"Simulate payment","checkout_request_id":234556,"merchant_receipt":"","receiver_narration":"","date_payment_acknowledged":null,"created_at":"2023-12-20 13:35:52","payment_option_id":4}]',
+  failed_payments: '[]',
+  request_date: '2023-12-20 13:35:18',
+  payment_status_description: 'Request fully paid',
+  msisdn: '254718880078',
+  short_url: 'https://online.uat.tingg.africa/testing/express/checkout?access_key=0802zRdQR0hlQtAhlt80etwtt2hRlsksdk008lzwlAt2z2Rkk0A8wtQRklRt&encrypted_payload=dEJRQzY1VDBuTWVyaWthN1h3ZXlnTjA1cFNIUTV5SkhQSzFodGZWbGJ5MGYvc2ZsS0hZQjN2R1JQaUUxNUdOZThPaXlHbWMyN2U0cG95MUErNWoyR3VJbFl3MGROOU0wRWdSNExKb096OCtwNGxSYVphSlNQT2QwaVhKRG44L2ZuQnpNRXBKYnVvYjZ1anFwZjF4VHU4a0JvWTlUaU5iSi9Nc2U2eWMrUnZvL3Q1QkN5ZjVSS0FoclpkazFtQ2p5WC80OTc1dmpteG5kVjUxZmQ4WHFsNXVQZEdtYm1ia1ZvaS9LbmpSRVZJdHlGUGRkY3I4bFpJYUZuTHdNNGluSFVaazVyZXFSVWlsdHViZHVBZFU4cGk0TkJYMUdiZGtqK3JVeXNkdUlYNG5GZEdNTnRkd3l4QzBwRFU2bEFhb1ZlU0x4TFJoblFEMWdrMTJ3N0NVZVo5LzJnbUNTUEhjd3ovNEtFYXNvWXVvTHAweFUzakxPNFdxY2ZMaUd1eTFJUWpBcjdqdk9RcjZPYm1aVHVPQ0dydjJYbWowZjNzaVRDZ21rWGVuZU03NFRpcUNBSzl2WkN5dnl6TFAxUERTMVkyZHpXS0F3VWNpZ0hMa1g0elFRSTljK2dLL2xMWit6NHE5ZVovckRvOTBrWlh6cXpuVjRHQTZkTUJNVld4eW9HbExGTW96eDh2SzYwNzVuMDZ4ZFdKZDcyWmduK1FEZ3c3N25nZE5ERVZ4UW5jZnRzNFVIWnJHN1ZYV2lEQjB2c0JwQ2lsU1pVbTdLVVFraXNGYmEwZGJrMFBEV2F1SG5adGdZWWJQeWFNTHNhb0ZUYm1CNDNqdCtvMXk5Sk5aQTZWZGxNeGpNOUZSd0Y5ckordk5uQ1RzbjVyODdza1hvUlA0N2ZUK0ZXZm5vZlRHbFl6dTZWYVcyZzltVVBXMlhrU0dxbGt2NHpsV2VGb3U0Mm9HbytBbjh5MHZFQWpMZ0xteSsycnpRUVg0VkxzYldDd1FONWhNUHUyZVk4NGw2YkZFMUhrUmJoYkZveXFhd200QVRxVXlzUEVpUmlLU2FqVEh4VDlCRVd1WDlpOGpDNUZFdUoyY2FLU3lNTzRhUmljK2Nsd0k4MUV4NFMrZVlZd2Rsem9vY0pxR2piaFV5TnZaQkNyRm5vN3JtL3F1RmY3SUJXSFZNT1RzbUtoUkJoQmFEMjZDUnNFdnhqZGw5VVBWT1R6REEyMnpwYzZEcTluZ1RpNXhtb296RkRrcEE5dWZ2WVRTdUx5b21wekJZc2ZGYmoyS1d1ZHVJNC9WeDlIUlVSMFNWRG1lVE4vaEsreFF4SUFYVk9Obk5ObmRjbWo5ckFaanRFY3BqUTRVU1dvVWJNYUdyL2dLUURMQ2xvQTFTV25nT21sRmZtMThZVEdSSTZoVVZ5bGlRc3UySmMxcW0zRXlmZ3BzbkV0NnphS1N1T0l2NTl6R3JJVS9mMnBSN056RmFubFo2a09FZUJtdzNpUGNabjN1TVkzREEycHhNYWc0SFBHMTBuWTZFVDdRWnJ2WWVGamhHNm9raEVFeXZhOGl2bmRGaW45ZzZ4Y0FNaXJBNkx0cGlFbkdzd0tpZ2xuVEVRS1ZHcTVWRlJNbUtLSU5FaFdRMUF3UTM5QTVQb0phVnRNRHlOU3cydTRsTTFyVDd5NlVsZ0tORUsySVBuZlYvRGxZZG5QNkk4THlqSGxscXJhb3pBRmVyV0lBZnFRPT0%3D',
+  customer_email: 'tingg.online@cellulant.io',
+  request_description: ''
+}
+C:\Users\user\OneDrive\Desktop\New folder\tastebites\app.js:288
+  const authResponse = await axios(authOptions);
+                       ^
+
+ReferenceError: axios is not defined
+    at C:\Users\user\OneDrive\Desktop\New folder\tastebites\app.js:288:24
+    at Layer.handle [as handle_request] (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\user\OneDrive\Desktop\New folder\tastebites\app.js:89:3
+    at Layer.handle [as handle_request] (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\layer.js:95:5)
+
+Node.js v21.4.0
+
+C:\Users\user\OneDrive\Desktop\New folder\tastebites>npm start
+
+> tastebites@1.0.0 start
+> node app.js
+
+Wed Dec 20 2023 16:45:07 GMT+0300 (East Africa Time): Server started on port 5000
+Connected to the database.
+Wed Dec 20 2023 16:45:25 GMT+0300 (East Africa Time): GET /cart
+Wed Dec 20 2023 16:45:26 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:45:26 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:45:28 GMT+0300 (East Africa Time): GET /menu
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /images/food12.png
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /images/food11.png
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /images/food8.png
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /images/food9.png
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /images/food10.png
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /images/food7.png
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /images/food6.png
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /images/food4.png
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /images/food3.png
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /images/food2.png
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /images/food5.png
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /images/food1.png
+Wed Dec 20 2023 16:45:29 GMT+0300 (East Africa Time): GET /css/images/Design%20Elements.png
+Wed Dec 20 2023 16:45:33 GMT+0300 (East Africa Time): POST /add-to-cart
+Wed Dec 20 2023 16:45:33 GMT+0300 (East Africa Time): GET /menu
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /images/food12.png
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /images/food11.png
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /images/food10.png
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /images/food9.png
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /images/food8.png
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /images/food7.png
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /images/food6.png
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /images/food5.png
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /images/food4.png
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /images/food3.png
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /images/food2.png
+Wed Dec 20 2023 16:45:34 GMT+0300 (East Africa Time): GET /images/food1.png
+Wed Dec 20 2023 16:45:35 GMT+0300 (East Africa Time): GET /cart
+Wed Dec 20 2023 16:45:35 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:45:35 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:45:37 GMT+0300 (East Africa Time): GET /checkout
+Wed Dec 20 2023 16:46:07 GMT+0300 (East Africa Time): POST /success
+Callback Received {
+  request_status_code: '178',
+  merchant_transaction_id: '284212',
+  checkout_request_id: '234558',
+  service_code: 'YELLOWGEM',
+  account_number: 'oid39',
+  currency_code: 'KES',
+  request_amount: '320',
+  amount_paid: '320.00',
+  payments: '[{"id":47592,"msisdn":254718880078,"payment_option_transaction_id":"6724a5ff-dbf7-4fbe-bfc0-5886811c5fb0","account_number":"oid39","customer_name":"Customer","amount_paid":320,"gateway_transaction_id":"525307879461249024","date_payment_received":"2023-12-20 16:46:03","gateway_overall_status":139,"currency_id":"70","country_id":"117","service_id":"2520","payer_narration":"Simulate payment","checkout_request_id":234558,"merchant_receipt":"","receiver_narration":"","date_payment_acknowledged":null,"created_at":"2023-12-20 13:46:05","payment_option_id":3}]',
+  failed_payments: '[]',
+  request_date: '2023-12-20 13:45:40',
+  payment_status_description: 'Request fully paid',
+  msisdn: '254718880078',
+  short_url: 'https://online.uat.tingg.africa/testing/express/checkout?access_key=0802zRdQR0hlQtAhlt80etwtt2hRlsksdk008lzwlAt2z2Rkk0A8wtQRklRt&encrypted_payload=dEJRQzY1VDBuTWVyaWthN1h3ZXlnTjA1cFNIUTV5SkhQSzFodGZWbGJ5MGYvc2ZsS0hZQjN2R1JQaUUxNUdOZThPaXlHbWMyN2U0cG95MUErNWoyR3VJbFl3MGROOU0wRWdSNExKb096OCtwNGxSYVphSlNQT2QwaVhKRG44L2ZuQnpNRXBKYnVvYjZ1anFwZjF4VHU4a0JvWTlUaU5iSi9Nc2U2eWMrUnZvL3Q1QkN5ZjVSS0FoclpkazFtQ2p5WC80OTc1dmpteG5kVjUxZmQ4WHFsNXVQZEdtYm1ia1ZvaS9LbmpSRVZJdHlGUGRkY3I4bFpJYUZuTHdNNGluSFVaazVyZXFSVWlsdHViZHVBZFU4cGk0TkJYMUdiZGtqK3JVeXNkdUlYNG5GZEdNTnRkd3l4QzBwRFU2bEFhb1ZlU0x4TFJoblFEMWdrMTJ3N0NVZVo5LzJnbUNTUEhjd3ovNEtFYXNvWXVvTHAweFUzakxPNFdxY2ZMaUd1eTFJUWpBcjdqdk9RcjZPYm1aVHVPQ0dydjJYbWowZjNzaVRDZ21rWGVuZU03NFRpcUNBSzl2WkN5dnl6TFAxUERTMVkyZHpXS0F3VWNpZ0hMa1g0elFRSTljK2dLL2xMWit6NHE5ZVovckRvOTBrWlh6cXpuVjRHQTZkTUJNVld4eW9HbExGTW96eDh2SzYwNzVuMDZ4ZFdKZDcyWmduK1FEZ3c3N25nZE5ERVZ4UW5jZnRzNFVIWnJHN1ZYV2lEQjB2c0JwQ2lsU1pVbTdLVVFraXNGYmEwZGJrMFBEV2F1SG5adGdZWWJQeWFNTHNhb0ZUYm1CNDNqdCtvMXk5Sk5aQTZWZGxNeGpNOUZSd0Y5ckordk5uQ1RzbjVyODdza1hvUlA0N2ZUK0ZXZm5vZlRHbFl6dTZWYVcyZzltVVBXMlhrU0dxbGt2NHpsV2VGb3U0Mm9HbytBbjh5MHZFQWpMZ0xteSsycnpRUVg0VkxzYldDd1FONWhNUHUyZVk4NGw2YkZFMUhrUmJoYkZveXFhd200QVRxVXlzUEVpUmlLU2FqVEh4VDlCRVd1WDlpOGpDNUZFdUoyY2FLU3lNTzRhUmljK2Nsd0k4MUV4NFMrZVlZd2Rsem9vY0pxR2piaFV5TnZaQkNyRm5vN3JtL3F1RmY3SUJXSFZNT1RzbUtoUkJoQmFEMjZDUnNFdnhqZGw5VVBWT1R6REEyMnpwYzZEcTluZ1RpNXhtb296RkRrcEE5dWZ2WVRTdUx5b21wekJZc2ZGYmoyS1d1ZHVJNC9WeDlIUlVSMFNWRG1lVE4vaEsreFF4SUFYVk9Obk5ObmRjbWo5ckFaanRFY3BqUTRVU1dvVWJNYUdyL2dLUURMQ2xvQTFTV25nT21sRmZtMThZVEdSSTZoVVZ5bGlRc3UySmMxcW0zRXlmZ3BzbkV0NnphS1N1T0l2NTl6R3JJVS9mMnBSN056RmFubFo2a09FZUJtdzNpUGNabjN1TVkzREEycHhNYWc0SFBHMTBuWTZFVDdRWnJ2WWVGamhHNm9raEVFeXZhOGl2bmRGaW45ZzZ4Y0FNaXJBNkx0cGlFbkdzd0tpZ2xuVEVRS1ZHcTVWRlJNbUtLSU5FaFdRMUF3UTM5QTVQb0phVnRNRHlOU3cydTRsTTFyVDd5NlVsZ0tORUsySVBuZlYvRGxZZG5QNkk4THlqSGxscXJhb3pBRmVyV0lBZnFRPT0%3D',
+  customer_email: 'tingg.online@cellulant.io',
+  request_description: ''
+}
+C:\Users\user\OneDrive\Desktop\New folder\tastebites\app.js:288
+  const authResponse = await axios(authOptions);
+                       ^
+
+ReferenceError: axios is not defined
+    at C:\Users\user\OneDrive\Desktop\New folder\tastebites\app.js:288:24
+    at Layer.handle [as handle_request] (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\user\OneDrive\Desktop\New folder\tastebites\app.js:89:3
+    at Layer.handle [as handle_request] (C:\Users\user\OneDrive\Desktop\New folder\tastebites\node_modules\express\lib\router\layer.js:95:5)
+
+Node.js v21.4.0
+
+C:\Users\user\OneDrive\Desktop\New folder\tastebites>npm start
+
+> tastebites@1.0.0 start
+> node app.js
+
+Wed Dec 20 2023 16:48:46 GMT+0300 (East Africa Time): Server started on port 5000
+Connected to the database.
+Wed Dec 20 2023 16:49:02 GMT+0300 (East Africa Time): GET /cart
+Wed Dec 20 2023 16:49:02 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:49:02 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:49:10 GMT+0300 (East Africa Time): GET /menu
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /images/food12.png
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /images/food11.png
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /images/food10.png
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /images/food9.png
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /images/food8.png
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /images/food7.png
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /images/food6.png
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /images/food5.png
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /images/food4.png
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /images/food3.png
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /images/food2.png
+Wed Dec 20 2023 16:49:11 GMT+0300 (East Africa Time): GET /images/food1.png
+Wed Dec 20 2023 16:49:14 GMT+0300 (East Africa Time): POST /add-to-cart
+Wed Dec 20 2023 16:49:14 GMT+0300 (East Africa Time): GET /menu
+Wed Dec 20 2023 16:49:14 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:49:14 GMT+0300 (East Africa Time): GET /images/food12.png
+Wed Dec 20 2023 16:49:14 GMT+0300 (East Africa Time): GET /images/food11.png
+Wed Dec 20 2023 16:49:14 GMT+0300 (East Africa Time): GET /images/food9.png
+Wed Dec 20 2023 16:49:14 GMT+0300 (East Africa Time): GET /images/food10.png
+Wed Dec 20 2023 16:49:14 GMT+0300 (East Africa Time): GET /images/food8.png
+Wed Dec 20 2023 16:49:15 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:49:15 GMT+0300 (East Africa Time): GET /images/food7.png
+Wed Dec 20 2023 16:49:15 GMT+0300 (East Africa Time): GET /images/food6.png
+Wed Dec 20 2023 16:49:15 GMT+0300 (East Africa Time): GET /images/food5.png
+Wed Dec 20 2023 16:49:15 GMT+0300 (East Africa Time): GET /images/food4.png
+Wed Dec 20 2023 16:49:15 GMT+0300 (East Africa Time): GET /images/food3.png
+Wed Dec 20 2023 16:49:15 GMT+0300 (East Africa Time): GET /images/food2.png
+Wed Dec 20 2023 16:49:15 GMT+0300 (East Africa Time): GET /images/food1.png
+Wed Dec 20 2023 16:49:16 GMT+0300 (East Africa Time): POST /add-to-cart
+Wed Dec 20 2023 16:49:16 GMT+0300 (East Africa Time): GET /menu
+Wed Dec 20 2023 16:49:16 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /images/food12.png
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /images/food11.png
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /images/food10.png
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /images/food9.png
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /images/food8.png
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /images/food7.png
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /images/food6.png
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /images/food5.png
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /images/food4.png
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /images/food3.png
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /images/food2.png
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /images/food1.png
+Wed Dec 20 2023 16:49:17 GMT+0300 (East Africa Time): GET /cart
+Wed Dec 20 2023 16:49:18 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:49:18 GMT+0300 (East Africa Time): GET /js/script.js
+Wed Dec 20 2023 16:49:19 GMT+0300 (East Africa Time): GET /checkout
+Wed Dec 20 2023 16:50:00 GMT+0300 (East Africa Time): POST /success
+Callback Received {
+  request_status_code: '178',
+  merchant_transaction_id: '995633',
+  checkout_request_id: '234559',
+  service_code: 'YELLOWGEM',
+  account_number: 'oid39',
+  currency_code: 'KES',
+  request_amount: '620',
+  amount_paid: '620.00',
+  payments: '[{"id":47593,"msisdn":254718880078,"payment_option_transaction_id":"e3e0c3af-90e4-4e04-b442-e1ed374ee340","account_number":"oid39","customer_name":"Customer","amount_paid":620,"gateway_transaction_id":"525308787905556480","date_payment_received":"2023-12-20 16:49:40","gateway_overall_status":139,"currency_id":"70","country_id":"117","service_id":"2520","payer_narration":"Simulate payment","checkout_request_id":234559,"merchant_receipt":"","receiver_narration":"","date_payment_acknowledged":null,"created_at":"2023-12-20 13:49:41","payment_option_id":4}]',
+  failed_payments: '[]',
+  request_date: '2023-12-20 13:49:22',
+  payment_status_description: 'Request fully paid',
+  msisdn: '254718880078',
+  short_url: 'https://online.uat.tingg.africa/testing/express/checkout?access_key=0802zRdQR0hlQtAhlt80etwtt2hRlsksdk008lzwlAt2z2Rkk0A8wtQRklRt&encrypted_payload=dEJRQzY1VDBuTWVyaWthN1h3ZXlnTjA1cFNIUTV5SkhQSzFodGZWbGJ5MGYvc2ZsS0hZQjN2R1JQaUUxNUdOZThPaXlHbWMyN2U0cG95MUErNWoyR3VJbFl3MGROOU0wRWdSNExKb096OCtwNGxSYVphSlNQT2QwaVhKRG44L2ZuQnpNRXBKYnVvYjZ1anFwZjF4VHU4a0JvWTlUaU5iSi9Nc2U2eWMrUnZvL3Q1QkN5ZjVSS0FoclpkazFtQ2p5WC80OTc1dmpteG5kVjUxZmQ4WHFsNXVQZEdtYm1ia1ZvaS9LbmpSRVZJdHlGUGRkY3I4bFpJYUZuTHdNNGluSFVaazVyZXFSVWlsdHViZHVBZFU4cGk0TkJYMUdiZGtqK3JVeXNkdUlYNG5GZEdNTnRkd3l4QzBwRFU2bEFhb1ZlU0x4TFJoblFEMWdrMTJ3N0NVZVo5LzJnbUNTUEhjd3ovNEtFYXNvWXVvTHAweFUzakxPNFdxY2ZMaUd1eTFJUWpBcjdqdk9RcjZPYm1aVHVPQ0dydjJYbWowZjNzaVRDZ21rWGVuZU03NFRpcUNBSzl2WkN5dnl6TFAxUERTMVkyZHpXS0F3VWNpZ0hMa1g0elFRSTljK2dLL2xMWit6NHE5ZVovckRvOTBrWlh6cXpuVjRHQTZkTUJNVld4eW9HbExGTW96eDh2SzYwNzVuMDZ4ZFdKZDcyWmduK1FEZ3c3N25nZE5ERVZ4UW5jZnRzNFVIWnJHN1ZYV2lEQjB2c0JwQ2lsU1pVbTdLVVFraXNGYmEwZGJrMFBEV2F1SG5adGdZWWJQeWFNTHNhb0ZUYm1CNDNqdCtvMXk5Sk5aQTZWZGxNeGpNOUZSd0Y5ckordk5uQ1RzbjVyODdza1hvUlA0N2ZUK0ZXZm5vZlRHbFl6dTZWYVcyZzltVVBXMlhrU0dxbGt2NHpsV2VGb3U0Mm9HbytBbjh5MHZFQWpMZ0xteSsycnpRUVg0VkxzYldDd1FONWhNUHUyZVk4NGw2YkZFMUhrUmJoYkZveXFhd200QVRxVXlzUEVpUmlLU2FqVEh4VDlCRVd1WDlpOGpDNUZFdUoyY2FLU3lNTzRhUmljK2Nsd0k4MUV4NFMrZVlZd2Rsem9vY0pxR2piaFV5TnZaQkNyRm5vN3JtL3F1RmY3SUJXSFZNT1RzbUtoUkJoQmFEMjZDUnNFdnhqZGw5VVBWT1R6REEyMnpwYzZEcTluZ1RpNXhtb296RkRrcEE5dWZ2WVRTdUx5b21wekJZc2ZGYmoyS1d1ZHVJNC9WeDlIUlVSMFNWRG1lVE4vaEsreFF4SUFYVk9Obk5ObmRjbWo5ckFaanRFY3BqUTRVU1dvVWJNYUdyL2dLUURMQ2xvQTFTV25nT21sRmZtMThZVEdSSTZoVVZ5bGlRc3UySmMxcW0zRXlmZ3BzbkV0NnphS1N1T0l2NTl6R3JJVS9mMnBSN056RmFubFo2a09FZUJtdzNpUGNabjN1TVkzREEycHhNYWc0SFBHMTBuWTZFVDdRWnJ2WWVGamhHNm9raEVFeXZhOGl2bmRGaW45ZzZ4Y0FNaXJBNkx0cGlFbkdzd0tpZ2xuVEVRS1ZHcTVWRlJNbUtLSU5FaFdRMUF3UTM5QTVQb0phVnRNRHlOU3cydTRsTTFyVDd5NlVsZ0tORUsySVBuZlYvRGxZZG5QNkk4THlqSGxscXJhb3pBRmVyV0lBZnFRPT0%3D',
+  customer_email: 'tingg.online@cellulant.io',
+  request_description: ''
+}
+Wed Dec 20 2023 16:50:10 GMT+0300 (East Africa Time): POST /success
+Callback Received {
+  request_status_code: '178',
+  merchant_transaction_id: '995633',
+  checkout_request_id: '234559',
+  service_code: 'YELLOWGEM',
+  account_number: 'oid39',
+  currency_code: 'KES',
+  request_amount: '620',
+  amount_paid: '620.00',
+  payments: '[{"id":47593,"msisdn":254718880078,"payment_option_transaction_id":"e3e0c3af-90e4-4e04-b442-e1ed374ee340","account_number":"oid39","customer_name":"Customer","amount_paid":620,"gateway_transaction_id":"525308787905556480","date_payment_received":"2023-12-20 16:49:40","gateway_overall_status":139,"currency_id":"70","country_id":"117","service_id":"2520","payer_narration":"Simulate payment","checkout_request_id":234559,"merchant_receipt":"","receiver_narration":"","date_payment_acknowledged":null,"created_at":"2023-12-20 13:49:41","payment_option_id":4}]',
+  failed_payments: '[]',
+  request_date: '2023-12-20 13:49:22',
+  payment_status_description: 'Request fully paid',
+  msisdn: '254718880078',
+  short_url: 'https://online.uat.tingg.africa/testing/express/checkout?access_key=0802zRdQR0hlQtAhlt80etwtt2hRlsksdk008lzwlAt2z2Rkk0A8wtQRklRt&encrypted_payload=dEJRQzY1VDBuTWVyaWthN1h3ZXlnTjA1cFNIUTV5SkhQSzFodGZWbGJ5MGYvc2ZsS0hZQjN2R1JQaUUxNUdOZThPaXlHbWMyN2U0cG95MUErNWoyR3VJbFl3MGROOU0wRWdSNExKb096OCtwNGxSYVphSlNQT2QwaVhKRG44L2ZuQnpNRXBKYnVvYjZ1anFwZjF4VHU4a0JvWTlUaU5iSi9Nc2U2eWMrUnZvL3Q1QkN5ZjVSS0FoclpkazFtQ2p5WC80OTc1dmpteG5kVjUxZmQ4WHFsNXVQZEdtYm1ia1ZvaS9LbmpSRVZJdHlGUGRkY3I4bFpJYUZuTHdNNGluSFVaazVyZXFSVWlsdHViZHVBZFU4cGk0TkJYMUdiZGtqK3JVeXNkdUlYNG5GZEdNTnRkd3l4QzBwRFU2bEFhb1ZlU0x4TFJoblFEMWdrMTJ3N0NVZVo5LzJnbUNTUEhjd3ovNEtFYXNvWXVvTHAweFUzakxPNFdxY2ZMaUd1eTFJUWpBcjdqdk9RcjZPYm1aVHVPQ0dydjJYbWowZjNzaVRDZ21rWGVuZU03NFRpcUNBSzl2WkN5dnl6TFAxUERTMVkyZHpXS0F3VWNpZ0hMa1g0elFRSTljK2dLL2xMWit6NHE5ZVovckRvOTBrWlh6cXpuVjRHQTZkTUJNVld4eW9HbExGTW96eDh2SzYwNzVuMDZ4ZFdKZDcyWmduK1FEZ3c3N25nZE5ERVZ4UW5jZnRzNFVIWnJHN1ZYV2lEQjB2c0JwQ2lsU1pVbTdLVVFraXNGYmEwZGJrMFBEV2F1SG5adGdZWWJQeWFNTHNhb0ZUYm1CNDNqdCtvMXk5Sk5aQTZWZGxNeGpNOUZSd0Y5ckordk5uQ1RzbjVyODdza1hvUlA0N2ZUK0ZXZm5vZlRHbFl6dTZWYVcyZzltVVBXMlhrU0dxbGt2NHpsV2VGb3U0Mm9HbytBbjh5MHZFQWpMZ0xteSsycnpRUVg0VkxzYldDd1FONWhNUHUyZVk4NGw2YkZFMUhrUmJoYkZveXFhd200QVRxVXlzUEVpUmlLU2FqVEh4VDlCRVd1WDlpOGpDNUZFdUoyY2FLU3lNTzRhUmljK2Nsd0k4MUV4NFMrZVlZd2Rsem9vY0pxR2piaFV5TnZaQkNyRm5vN3JtL3F1RmY3SUJXSFZNT1RzbUtoUkJoQmFEMjZDUnNFdnhqZGw5VVBWT1R6REEyMnpwYzZEcTluZ1RpNXhtb296RkRrcEE5dWZ2WVRTdUx5b21wekJZc2ZGYmoyS1d1ZHVJNC9WeDlIUlVSMFNWRG1lVE4vaEsreFF4SUFYVk9Obk5ObmRjbWo5ckFaanRFY3BqUTRVU1dvVWJNYUdyL2dLUURMQ2xvQTFTV25nT21sRmZtMThZVEdSSTZoVVZ5bGlRc3UySmMxcW0zRXlmZ3BzbkV0NnphS1N1T0l2NTl6R3JJVS9mMnBSN056RmFubFo2a09FZUJtdzNpUGNabjN1TVkzREEycHhNYWc0SFBHMTBuWTZFVDdRWnJ2WWVGamhHNm9raEVFeXZhOGl2bmRGaW45ZzZ4Y0FNaXJBNkx0cGlFbkdzd0tpZ2xuVEVRS1ZHcTVWRlJNbUtLSU5FaFdRMUF3UTM5QTVQb0phVnRNRHlOU3cydTRsTTFyVDd5NlVsZ0tORUsySVBuZlYvRGxZZG5QNkk4THlqSGxscXJhb3pBRmVyV0lBZnFRPT0%3D',
+  customer_email: 'tingg.online@cellulant.io',
+  request_description: ''
+}
+{
+  token_type: 'bearer',
+  expires_in: 3600,
+  access_token: 'eyJraWQiOiJjYXMtcGsiLCJhbGciOiJSUzUxMiJ9.eyJzdWIiOiIxNDgzMSIsImxldmVsIjoiQ1VTVE9NRVIiLCJpc3MiOiJodHRwOi8vY2FzLWFwaS50ZXN0aW5nOjgwODAvIiwidXR5cGUiOiJBUEkiLCJhdWQiOiIqIiwicGhvbmUiOiIwIiwibmFtZSI6IllFTExPV0dFTTE3MDI2NDM0NzIyNjYiLCJjbGllbnQiOiJZRUxMT1dHRU0iLCJleHAiOjE3MDMwODM4MTIsImlhdCI6MTcwMzA4MDIxMiwiY3VzdF9pZCI6MTEzNzUsImp0aSI6IjE5ZDFhNTRkLWZhZTUtNDY1Ni05NjJjLWY3ODk0Y2FkZGMzOWQ5YjM5OTg0LWVjMjEtNGY1YS1iMDhkLWFjNThhNWQ0Mzk3MyJ9.i6QynDoRBbTarcu9VW-U0Op70hzk4glonfgQHSlIkhzQOQDRNZrv4kbSZTpxy7DWv-mRIrb2x9UGKJbnX7997Qe79Dly2n9QuRCqT7WxXk8g61dL9bawej40pGb3CTJOkf5iovX08yG6JcyUPrmc2-PDue81bzxnL_FrbB78sO98kg9f59MTji2yin36ZGL5kswC4Yojat8o4ZRro1UGUxCk_0gED2oU2ZAGM3eqZy2-kL2EzQkFoqMuLQ61oXW6UeBZJf-RW4CuPjmOu31JBlM4u-3JKJfBnNxLG5CPy-VVZofMnAjMUwP0gu_zODiCbzfxnCI4j2IhwIytx2L0Vw',
+  refresh_token: 'NE5icnJkT0JwUHdtT2ZOS2xSU1EzRWovWGtqNWRqK2tyb1ZBcmg4OTlwMjJxR1BJeFFLUnVFbHo1eE1CeXAvWWJQWDFSb0RPQUFqdTNYTWJaRWorK2c9PQ=='
+}
+Wed Dec 20 2023 16:50:13 GMT+0300 (East Africa Time): GET /css/style.css
+Wed Dec 20 2023 16:50:13 GMT+0300 (East Africa Time): GET /js/script.js
+{
+  token_type: 'bearer',
+  expires_in: 3600,
+  access_token: 'eyJraWQiOiJjYXMtcGsiLCJhbGciOiJSUzUxMiJ9.eyJzdWIiOiIxNDgzMSIsImxldmVsIjoiQ1VTVE9NRVIiLCJpc3MiOiJodHRwOi8vY2FzLWFwaS50ZXN0aW5nOjgwODAvIiwidXR5cGUiOiJBUEkiLCJhdWQiOiIqIiwicGhvbmUiOiIwIiwibmFtZSI6IllFTExPV0dFTTE3MDI2NDM0NzIyNjYiLCJjbGllbnQiOiJZRUxMT1dHRU0iLCJleHAiOjE3MDMwODM4MTQsImlhdCI6MTcwMzA4MDIxNCwiY3VzdF9pZCI6MTEzNzUsImp0aSI6ImMwZTMzMDU1LTY3YzMtNDUyMC04OTIxLTUxMDBkMTE5M2M0ZjkwMDBlN2QyLWYxODEtNDE0ZC1hNDE0LWQ1OGQyZmQ5Yzk2NyJ9.HDR3i_aIEjFKtUfgLVc-xrX2zqOtRBm1WOLc_RecvIWbs5wfHMKOoVkDpJqzkv5rE9ElJvyI8vF836Ek7b8h9Wk36_AcSSJuxA6V7hhsnwu4yELGDX-1bKn-6fVi4C74rxVa5tJZ80lqNLeVu4k9c2jvJzRRKls-KfLt7hqoEHjvtiBvh-sKs11B4nfaAXTKx9MNOTSg-Qmg4hhKHF7k_ZJJ0b4VoqNuX84K2OCNRDhB09836AknpeRbxQt8i05XzZsFs8UpVpikaBy8P0Y4hSfT7L7p6wDTZpIELP4uAuAQpXKDGpyvqdtX6Mgt2eIzwssujMsXMwAZudWNLvAcDQ',
+  refresh_token: 'Z0RzS2E3ajlUVldpSVU1NHMxME1CbjNBOVNNSWlablFkYVVmVnFRclhjUy9ZbS9xWEZCdUV3YzR6b0t0RVBFaTU5VEsxRXlBbWxFRy9maUNVNDJ0cVE9PQ=='
+}
+{
+  status: {
+    status_code: '200',
+    status_description: 'Gateway response:The acknowledgement was successful.'
+  },
+  results: {
+    checkout_request_id: '234559',
+    merchant_transaction_id: '995633',
+    request_status_code: '183',
+    payments: [ [Object] ]
+  }
+}
+{
+  status: {
+    status_code: '200',
+    status_description: 'Gateway response:The acknowledgement was successful.'
+  },
+  results: {
+    checkout_request_id: '234559',
+    merchant_transaction_id: '995633',
+    request_status_code: '183',
+    payments: [ [Object] ]
+  }
+}

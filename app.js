@@ -1,6 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
+const axios = require('axios');
 const sqlite3 = require('sqlite3').verbose();
 const app = express();
 const port = 5000;
@@ -225,7 +226,8 @@ redirect_url = `https://online.uat.tingg.africa/testing/express/checkout?access_
 });
 
 //Route to handle successful checkout
-app.post('/success', (req, res) => {
+app.post('/success', async (req, res) => {
+  //Authenticate checkout Request
   //log the callback received from the checkout
   console.log("Callback Received", req.body)
 //TODO: uncomment the code below to save the callback to the database
@@ -259,11 +261,72 @@ app.post('/success', (req, res) => {
   const currency_code = req.body.currency_code;
   const request_amount = req.body.request_amount;
   const amount_paid = req.body.amount_paid;
+  const service_code = req.body.service_code;
   const payments = req.body.payments;
   const request_date = req.body.request_date;
   const payment_status_description = req.body.payment_status_description;
   const msisdn = req.body.msisdn;
   //render the success page and pass the request body details to it
+  //authenticate the checkout request
+  
+  // Authentication request options
+  const authOptions = {
+    method: 'POST',
+    url: 'https://api-dev.tingg.africa/v1/oauth/token/request',
+    headers: {
+      accept: 'application/json',
+      apikey: process.env.API_KEY, // Replace with your Tingg API key
+      'content-type': 'application/json',
+    },
+    data: {
+      client_id: process.env.CLIENT_ID, // Replace with your client ID
+      client_secret: process.env.CLIENT_SECRET, // Replace with your client secret
+      grant_type: 'client_credentials',
+    },
+  };
+  
+  // Make a POST request to authenticate and obtain an access token
+  const authResponse = await axios(authOptions);
+axios
+.request(authOptions)
+.then(function (response) {
+  console.log(response.data);
+})
+.catch(function (error) {
+  console.error(error);
+});
+  // Extract the access token from the authentication response
+  const accessToken = authResponse.data.access_token;
+
+  const acknowledgement = {
+    method: 'POST',
+    url: 'https://api-dev.tingg.africa/v3/checkout-api/acknowledgement/request',
+    headers: {
+      accept: 'application/json',
+      apikey: process.env.API_KEY, // Replace with your Tingg API key
+      Authorization: `Bearer ${accessToken}`,
+      'content-type': 'application/json',
+    },
+    data: {
+      acknowledgement_amount: amount_paid,
+      acknowledgement_type: 'Full',
+      acknowledgement_narration: 'Test acknowledgement',
+      acknowledgment_reference: 'ACK80007',
+      merchant_transaction_id: merchant_transaction_id,
+      service_code: service_code,
+      status_code: '183',
+      currency_code: 'KES'
+    }
+  };
+  
+axios
+.request(acknowledgement)
+.then(function (response) {
+  console.log(response.data);
+})
+.catch(function (error) {
+  console.error(error);
+});
 
   res.render('success', {
     request_status_code: request_status_code, 
