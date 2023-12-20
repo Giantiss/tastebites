@@ -213,9 +213,9 @@ var payloadobj = {
 const payloadStr = JSON.stringify(payloadobj);
   // Create object of the Encryption class  
   // console log IVKey, secretKey, accesskey
-  console.log(IVKey);
-  console.log(secretKey);
-  console.log(accessKey);
+  console.log("IV key is:",IVKey);
+  console.log("Secret key is:",secretKey);
+  console.log("Access key is:",accessKey);
 
   let encryption = new checkoutEncrypt.Encryption(IVKey, secretKey, algorithm);
   // Encrypt the payload
