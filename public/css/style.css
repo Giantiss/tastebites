@@ -680,16 +680,32 @@ max-width: 800px;
 margin: 5rem auto 0
 }
 
-table {
-width: 100%;
-border-collapse: collapse;
-margin-bottom: 20px;
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 16px; /* Adjust font size for better readability */
 }
 
-thead th, tbody td {
-border: 1px solid #ccc;
-padding: 10px;
-text-align: left;
+.payment-table th, .payment-table td {
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0; /* Soften the borders */
+  text-align: left;
+}
+
+/* Header style */
+.payment-table thead {
+  background-color: #62ae2f;
+}
+
+/* Alternate row colors for better readability */
+.payment-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect */
+.payment-table tbody tr:hover {
+  background-color: lightgreen; /* Light blue hover effect */
 }
 
 .subtotal {
@@ -705,6 +721,89 @@ margin-right: 10px; /* Add some margin between the buttons */
 
 .back-menu {
 display: inline-block; /* Set the back-menu button to be displayed inline-block */
+}
+.payment-container {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  line-height: 3px;
+}
+
+/* Payment Title Styles */
+.payment-title {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Payment Text Styles */
+.payment-text {
+  color: #555;
+  text-align: center;
+  line-height: 5px;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  opacity: 0.8;
+  text-shadow: 1px 1px 1px #000;
+  word-spacing: 3px;
+  letter-spacing: 1px; 
+}
+
+/* Payment Table Styles */
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payment-table th, 
+.payment-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.payment-table th {
+  background-color: #f5f5f5;
+}
+
+.payment-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.payment-table tr:hover {
+  background-color: #f1f1f1;
+}
+.logo2{
+  color:#62ae2f;
+  font-size: 30px;
+  font-family: 'dancing script', cursive;
+  padding: 1rem 0;
+
+}
+.green-circle {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid green;
+  background-color: white;
+  line-height: 30px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Style for the tick inside the circle */
+.green-circle i {
+  color: green;
+  font-size: 25px;          
+  
 }
 
 
