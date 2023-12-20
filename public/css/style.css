@@ -342,7 +342,7 @@ header {
   width: 100%;
 }
 
-/* .About {
+.About {
   padding: 2rem 7%;
   background: #f5f5f5;
   background-image: url(images/Design\ Elements.png);
@@ -407,7 +407,7 @@ header {
 
 .inner-about .about-img img {
   width: 100%;
-} */
+}
 
 .our-menu-item {
   padding: 2rem 7%;

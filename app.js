@@ -171,7 +171,7 @@ const algorithm = "aes-256-cbc";
 
   // encrypt the payload
 var payloadobj = {
-  "msisdn":"+254725135903",
+  "msisdn":"+254718880078",
   "account_number":"oid39",
   "country_code":"KEN",
   "currency_code":"KES",
