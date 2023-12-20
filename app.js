@@ -167,7 +167,7 @@ app.get('/cart', (req, res) => {
 });
   
 // Route to handle removing items from the cart
-app.post('/remove-item', (req, res) => {
+app.post('/remove-item',(req , res) => {
   var id = req.body.id;
   cartItems = req.session.cartItems;
 
@@ -204,19 +204,15 @@ var payloadobj = {
   "currency_code":"KES",
   "due_date":"2024-01-01 00:00:00",
   "fail_redirect_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
+  //TODO: change the merchant_transaction_id to a unique value prepend with y, m, d
   "merchant_transaction_id":getRandomInt(1000000),
   "callback_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
   "request_amount":req.session.totalPrice,
-  "success_redirect_url":"https://tastebites-qioi.onrender.com/success",
+  "success_redirect_url":process.env.BASE_URL + "success",
   "service_code":"YELLOWGEM",
 }
 const payloadStr = JSON.stringify(payloadobj);
   // Create object of the Encryption class  
-  // console log IVKey, secretKey, accesskey
-  console.log("IV key is:",IVKey);
-  console.log("Secret key is:",secretKey);
-  console.log("Access key is:",accessKey);
-
   let encryption = new checkoutEncrypt.Encryption(IVKey, secretKey, algorithm);
   // Encrypt the payload
   // call encrypt method
@@ -230,10 +226,58 @@ redirect_url = `https://online.uat.tingg.africa/testing/express/checkout?access_
 
 //Route to handle successful checkout
 app.post('/success', (req, res) => {
-  //get the total price from the session
-  const totalPrice = req.session.totalPrice;
-  //render the success page and pass the total price to it
-  res.render('success', {totalPrice: totalPrice});
+  //log the callback received from the checkout
+  console.log("Callback Received", req.body)
+//TODO: uncomment the code below to save the callback to the database
+  // db.run(`CREATE TABLE IF NOT EXISTS payments(
+  //   id INTEGER PRIMARY KEY AUTOINCREMENT,
+  //   request_status_code INTEGER,
+  //   merchant_transaction_id INTEGER,
+  //   checkout_request_id INTEGER,
+  //   service_code TEXT,
+  //   account_number TEXT,
+  //   currency_code TEXT,
+  //   request_amount INTEGER,
+  //   amount_paid INTEGER,
+  //   payments TEXT,
+  //   failed_payments TEXT,
+  //   request_date TEXT,
+  //   payment_status_description TEXT,
+  //   msisdn TEXT,
+  //   customer_email TEXT,
+  //   request_description TEXT
+  // )`);
+  // //insert the callback received into the database
+  // db.run(`INSERT INTO payments(request_status_code, merchant_transaction_id, checkout_request_id, service_code, account_number, currency_code, request_amount, amount_paid, payments, failed_payments, request_date, payment_status_description, msisdn, customer_email, request_description) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`, [req.body.request_status_code, req.body.merchant_transaction_id, req.body.checkout_request_id, req.body.service_code, req.body.account_number, req.body.currency_code, req.body.request_amount, req.body.amount_paid, req.body.payments, req.body.failed_payments, req.body.request_date, req.body.payment_status_description, req.body.msisdn, req.body.customer_email, req.body.request_description], (err) => {
+  //   if(err) throw err;
+  // });
+  //Get request body details
+  const request_status_code = req.body.request_status_code;
+  const merchant_transaction_id = req.body.merchant_transaction_id;
+  const checkout_request_id = req.body.checkout_request_id;
+  const account_number = req.body.account_number;
+  const currency_code = req.body.currency_code;
+  const request_amount = req.body.request_amount;
+  const amount_paid = req.body.amount_paid;
+  const payments = req.body.payments;
+  const request_date = req.body.request_date;
+  const payment_status_description = req.body.payment_status_description;
+  const msisdn = req.body.msisdn;
+  //render the success page and pass the request body details to it
+
+  res.render('success', {
+    request_status_code: request_status_code, 
+    merchant_transaction_id: merchant_transaction_id, 
+    checkout_request_id: checkout_request_id,
+    account_number: account_number, 
+    currency_code: currency_code, 
+    request_amount: request_amount, 
+    amount_paid: amount_paid, 
+    payments: payments,
+    request_date: request_date, 
+    payment_status_description: payment_status_description, 
+    msisdn: msisdn
+  })
 });
 // Start server
 app.listen(port, () => {
