@@ -36,6 +36,24 @@ function errorHandler(err, req, res, next) {
 app.use(logRequests);
 app.use(logErrors);
 app.use(errorHandler);
+
+//function to calculate the total items in the cart
+function calculateTotalItems(cartItems) {
+  // Initialize total items to 0
+  let totalItems = 0;
+  // Loop through the cart items and calculate the total items
+  for (let i = 0; i < cartItems.length; i++) {
+    // Check if the quantity is defined
+    if (cartItems[i].quantity) {
+      // Add the quantity to the total items
+      totalItems += parseInt(cartItems[i].quantity);
+    }
+  }
+  // Return the total items
+  return totalItems;
+}
+
+
 //Sqlite database connection
 db = new sqlite3.Database('./tastyb', (err) => {
   if (err) {
@@ -76,7 +94,12 @@ app.get('/', (req, res) => {
   //get 5 foods from the database ordered by id
   db.all('SELECT * FROM foods ORDER BY id DESC LIMIT 5', (err, result) => {
     if(err) throw err;
-    res.render('index', {foods: result});
+        //get total items in cart
+        const cartItems = req.session.cartItems || [];
+        // Calculate total items in the cart
+        const totalItems = calculateTotalItems(cartItems);
+        // render the index page and pass the foods and total items to it
+        res.render('index', {foods: result, totalItems: totalItems});
   });
 });
 
@@ -84,9 +107,14 @@ app.get('/menu', (req, res) => {
   //get all foods from the database ordered by id
   db.all('SELECT * FROM foods ORDER BY id DESC', (err, result) => {
     if(err) throw err;
-    // render the menu page and pass the foods to it
-    res.render('menu', {foods: result});
-      });
+    //get total items in cart
+    const cartItems = req.session.cartItems || [];
+    // Calculate total items in the cart
+    const totalItems = calculateTotalItems(cartItems);
+
+    // render the menu page and pass the foods and total items to it
+    res.render('menu', {foods: result, totalItems: totalItems});
+    });
 });
 // Function to calculate the total price of items in the cart
 function calculateTotalPrice(cartItems) {
@@ -132,8 +160,10 @@ app.post('/add-to-cart', (req, res) => {
 app.get('/cart', (req, res) => {
   const cartItems = req.session.cartItems || [];
   const totalPrice = req.session.totalPrice || 0;
-
-  res.render('cart', { cartItems: cartItems, totalPrice: totalPrice });
+  // Calculate total items in the cart
+  const totalItems = calculateTotalItems(cartItems);
+  // Render the cart page and pass the cart items, total items, and total price to it
+  res.render('cart', {cartItems: cartItems, totalItems: totalItems, totalPrice: totalPrice});
 });
   
 // Route to handle removing items from the cart
@@ -155,9 +185,6 @@ app.post('/remove-item', (req, res) => {
 
 //other routes and configurations...
 app.get('/checkout', (req, res) => {
-  //get total price from session
-  const totalPrice = req.session.totalPrice;
-  //get the redirect url 
 //generate 6 digit random number
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -169,7 +196,7 @@ const IVKey = process.env.IV_KEY;
 const secretKey = process.env.SECRET_KEY;
 const algorithm = "aes-256-cbc";
 
-  // encrypt the payload
+// encrypt the payload
 var payloadobj = {
   "msisdn":"+254725135903",
   "account_number":"oid39",
@@ -180,14 +207,19 @@ var payloadobj = {
   "merchant_transaction_id":getRandomInt(1000000),
   "callback_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
   "request_amount":req.session.totalPrice,
-  "success_redirect_url":"https://tastebites-qioi.onrender.com/cart",
+  "success_redirect_url":"https://tastebites-qioi.onrender.com/success",
   "service_code":"YELLOWGEM",
 }
 const payloadStr = JSON.stringify(payloadobj);
   // Create object of the Encryption class  
+  // console log IVKey, secretKey, accesskey
+  console.log(IVKey);
+  console.log(secretKey);
+  console.log(accessKey);
+
   let encryption = new checkoutEncrypt.Encryption(IVKey, secretKey, algorithm);
   // Encrypt the payload
-   // call encrypt method
+  // call encrypt method
  var result = encryption.encrypt(payloadStr);
 // redirect url
 redirect_url = `https://online.uat.tingg.africa/testing/express/checkout?access_key=${accessKey}&encrypted_payload=${result}`;
@@ -196,6 +228,13 @@ redirect_url = `https://online.uat.tingg.africa/testing/express/checkout?access_
   res.redirect(redirect_url);
 });
 
+//Route to handle successful checkout
+app.post('/success', (req, res) => {
+  //get the total price from the session
+  const totalPrice = req.session.totalPrice;
+  //render the success page and pass the total price to it
+  res.render('success', {totalPrice: totalPrice});
+});
 // Start server
 app.listen(port, () => {
   //console log a message when the server starts listening and the current date and time
