@@ -508,14 +508,14 @@ header {
   font-family: 'dancing script', cursive;
   padding: 0.5rem 0;
 }
-
+/* 
 .menu-star i {
   color: #b8860b;
   font-size: 18px;
   padding: 0.5rem 0;
-}
+} */
 
-.chose-us {
+/* .chose-us {
   padding: 4rem 7%;
   background-color: #e5e4e2;
 }
@@ -571,8 +571,8 @@ header {
 
 .inner-chose {
   background-color: white;
-}
-
+} */
+/* 
 #history {
   padding-top: 2rem !important;
 }
@@ -638,9 +638,9 @@ header {
   color: #b8860b;
   font-size: 25px;
   font-family: 'dancing script', cursive;
-}
+} */
 
-.main-footer {
+/* .main-footer {
   background-image: url(images/Design\ Elements.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -669,7 +669,7 @@ header {
 
 .inner-footer a:hover {
   margin-left: 10px;
-}
+} */
 
 ::-webkit-scrollbar {
   width: 10px;
