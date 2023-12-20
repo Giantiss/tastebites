@@ -27,7 +27,7 @@
                 <a href="/cart">
                     <i id="cart-count" class="fas fa-cart-plus">
                         <!-- TODO: show how many products in cart -->
-                        <!-- <span id="cartCounter"></span> -->
+                        <span id="cartCounter"><%= totalItems %></span>
                     </i>
                 </a>
             </div>
@@ -52,7 +52,7 @@
                         <h1><span>Kes </span><%= food.price %></h1>
                     </div>
                     </div>
-                    <form action="/add-to-cart" method="post">
+                    <form action="/add-to-cart" method="post" id="cart-form">
                         <input type="hidden" name="id" value="<%= food.id %>">
                         <input type="hidden" name="title" value="<%= food.title %>">
                         <input type="hidden" name="price" value="<%= food.price %>">
