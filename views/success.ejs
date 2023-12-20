@@ -31,7 +31,7 @@
       <div id="cart" class="cart-icon">
         <a href="/cart">
           <!-- show how many products in cart -->
-          <i id="cart-count" class="fas fa-cart-plus"><span id="cartCounter"><%= totalItems %></span></i>
+          <i id="cart-count" class="fas fa-cart-plus"><span id="cartCounter">0</span></i>
         </a>
     </div>
     </div>
@@ -40,38 +40,12 @@
   <div class="home" id="home">
     <div class="center-container">
       <div class="cart-container">
-        <table>
-          <thead>
-              <tr>
-                  <th>Title</th>
-                  <th>Quantity</th>
-                  <th>Price</th>
-                  <th>Subtotal</th>
-                  <th>Remove</th>
-              </tr>
-          </thead>
-          <tbody>
-              <% cartItems.forEach(function(item) { %>
-                  <tr>
-                      <td><%= item.title %></td>
-                      <td><%= item.quantity %></td>
-                      <td><%= item.price %></td>
-                      <td><%= (item.quantity * item.price).toFixed(2) %></td>
-                      <td>
-                          <form method="POST" action="/remove-item">
-                              <input type="hidden" name="id" value="<%= item.id %>">
-                              <button type="submit" class="btn btn-danger">Remove</button>
-                          </form>
-                      </td>
-                  </tr>
-              <% }); %>
-              <tr>
-                  <td colspan="3">Total:</td>
-                  <td><%= totalPrice.toFixed(2) %></td>
-                  <td></td> <!-- Empty cell for alignment -->
-              </tr>
-          </tbody>
-      </table>
+        <div>
+            <h2>Payment Successful</h2>
+            <p>Thank you for shopping with us.</p>
+            <p>Amount paid was KES:</p>
+
+        </div>
       <div class="subtotal">
         <a href="/menu">
         <button href="/menu" class="btn btn-outline-primary btn-lg">Back to Menu</button>
@@ -86,7 +60,33 @@
     </div>
   </div>
 
-  
+  <footer>
+    <div class="main-footer">
+      <div class="inner-footer">
+        <h2>TasteBites</h2>
+        <a href="#">About Us</a>
+        <a href="#">Menu</a>
+        <a href="#">Cart</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="inner-footer">
+        <h2>Menu</h2>
+        <a href="#">Pizza</a>
+        <a href="#">Burger</a>
+        <a href="#">Beverages</a>
+        <a href="#">Snacks</a>
+      </div>
+
+      <div class="inner-footer">
+        <h2>Follow us</h2>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+        <a href="#">Dribbble</a>
+      </div>
+    </div>
+  </footer>
   <script src="https://cdn.cellulant.africa/js/tingg-checkout-library.js"></script>
   <script src="/js/script.js"></script>
 </body>

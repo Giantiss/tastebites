@@ -32,3 +32,9 @@ document
       })
       .catch((error) => console.log(error));
   });
+
+//prevent form with id cart-form default action
+document.getElementById("cart-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+});
+
