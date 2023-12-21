@@ -71,6 +71,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
 // Set up view engine
 app.set('view engine', 'ejs');
 
@@ -82,15 +83,8 @@ app.use('/images', express.static(__dirname + 'public/images'));
 app.use('/fonts', express.static(__dirname + 'public/fonts'));
 app.use('/vendor', express.static(__dirname + 'public/vendor'));
 app.use('/scss', express.static(__dirname + 'public/scss'));
-// Middleware to create a cartCounter variable in all views
-app.use((req, res, next) => {
-  const cartItems = req.session.cartItems || [];
-  const totalQuantity = cartItems.reduce((total, item) => total + parseInt(item.quantity), 0);
-  res.locals.cartCounter = totalQuantity || 0; // Ensure default value is set if totalQuantity is undefined
-  next();
-});
 
-// Routes
+// Route to display the index page
 app.get('/', (req, res) => {
   //get 5 foods from the database ordered by id
   db.all('SELECT * FROM foods ORDER BY id DESC LIMIT 5', (err, result) => {
@@ -104,6 +98,7 @@ app.get('/', (req, res) => {
   });
 });
 
+// Route to display the menu
 app.get('/menu', (req, res) => {
   //get all foods from the database ordered by id
   db.all('SELECT * FROM foods ORDER BY id DESC', (err, result) => {
@@ -117,6 +112,7 @@ app.get('/menu', (req, res) => {
     res.render('menu', {foods: result, totalItems: totalItems});
     });
 });
+
 // Function to calculate the total price of items in the cart
 function calculateTotalPrice(cartItems) {
   let totalPrice = 0;
@@ -197,7 +193,7 @@ const IVKey = process.env.IV_KEY;
 const secretKey = process.env.SECRET_KEY;
 const algorithm = "aes-256-cbc";
 
-// encrypt the payload
+// populate the payload
 var payloadobj = {
   "msisdn":"+254718880078",
   "account_number":"oid39",
@@ -215,13 +211,13 @@ var payloadobj = {
 const payloadStr = JSON.stringify(payloadobj);
   // Create object of the Encryption class  
   let encryption = new checkoutEncrypt.Encryption(IVKey, secretKey, algorithm);
-  // Encrypt the payload
-  // call encrypt method
+  // Encrypt the payload by calling encrypt method
  var result = encryption.encrypt(payloadStr);
 // redirect url
 redirect_url = `https://online.uat.tingg.africa/testing/express/checkout?access_key=${accessKey}&encrypted_payload=${result}`;
-
-  //render the checkout page and pass the total price and redirect url to it
+  //clear the cart session
+  req.session.cartItems = [];
+  //render TINGG checkout page with the redirect url endpoint
   res.redirect(redirect_url);
 });
 
@@ -253,6 +249,8 @@ app.post('/success', async (req, res) => {
   // db.run(`INSERT INTO payments(request_status_code, merchant_transaction_id, checkout_request_id, service_code, account_number, currency_code, request_amount, amount_paid, payments, failed_payments, request_date, payment_status_description, msisdn, customer_email, request_description) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`, [req.body.request_status_code, req.body.merchant_transaction_id, req.body.checkout_request_id, req.body.service_code, req.body.account_number, req.body.currency_code, req.body.request_amount, req.body.amount_paid, req.body.payments, req.body.failed_payments, req.body.request_date, req.body.payment_status_description, req.body.msisdn, req.body.customer_email, req.body.request_description], (err) => {
   //   if(err) throw err;
   // });
+
+
   //Get request body details
   const request_status_code = req.body.request_status_code;
   const merchant_transaction_id = req.body.merchant_transaction_id;
@@ -266,11 +264,11 @@ app.post('/success', async (req, res) => {
   const request_date = req.body.request_date;
   const payment_status_description = req.body.payment_status_description;
   const msisdn = req.body.msisdn;
-  //render the success page and pass the request body details to it
+
   //authenticate the checkout request
-  
   // Authentication request options
   const authOptions = {
+    // define the request method, url, headers, and data
     method: 'POST',
     url: 'https://api-dev.tingg.africa/v1/oauth/token/request',
     headers: {
@@ -284,21 +282,24 @@ app.post('/success', async (req, res) => {
       grant_type: 'client_credentials',
     },
   };
-  
   // Make a POST request to authenticate and obtain an access token
   const authResponse = await axios(authOptions);
+// use axios to make a post request to authenticate and obtain an access token  
 axios
 .request(authOptions)
+// handle success
 .then(function (response) {
   console.log(response.data);
 })
+// catch errors
 .catch(function (error) {
   console.error(error);
 });
   // Extract the access token from the authentication response
   const accessToken = authResponse.data.access_token;
-
+  // Acknowledgement request options
   const acknowledgement = {
+    // define the request method, url, headers, and data
     method: 'POST',
     url: 'https://api-dev.tingg.africa/v3/checkout-api/acknowledgement/request',
     headers: {
@@ -310,7 +311,7 @@ axios
     data: {
       acknowledgement_amount: amount_paid,
       acknowledgement_type: 'Full',
-      acknowledgement_narration: 'Test acknowledgement',
+      acknowledgement_narration: 'Tastebites payment acknowledgement',
       acknowledgment_reference: 'ACK80007',
       merchant_transaction_id: merchant_transaction_id,
       service_code: service_code,
@@ -318,16 +319,18 @@ axios
       currency_code: 'KES'
     }
   };
-  
+// use axios to make a post request to acknowledge the checkout request  
 axios
 .request(acknowledgement)
+// handle success
 .then(function (response) {
   console.log(response.data);
 })
+// catch errors
 .catch(function (error) {
   console.error(error);
 });
-
+// render the success page and pass the request body details to it
   res.render('success', {
     request_status_code: request_status_code, 
     merchant_transaction_id: merchant_transaction_id, 
