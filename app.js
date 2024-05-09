@@ -199,7 +199,7 @@ var payloadobj = {
   "account_number":"oid39",
   "country_code":"KEN",
   "currency_code":"KES",
-  "due_date":"2024-01-01 00:00:00",
+  "due_date":"2026-01-01 00:00:00",
   "fail_redirect_url":"https://webhook.site/6c933f61-d6da-4f8e-8a44-bf0323eb8ad6",
   //TODO: change the merchant_transaction_id to a unique value prepend with y, m, d
   "merchant_transaction_id":getRandomInt(1000000),
